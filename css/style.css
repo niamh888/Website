@@ -48,7 +48,53 @@ p {
         font-size: 16px;
     }       
     .button:hover {
-        background-color: #5b2294;
+        background-color: #623391;
+    }   
+    footer {
+        background-color: #360a2f;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    } 
+    nav {
+        background-color: #360a2f;
+        padding: 10px;
+         color: white;
+
+    }   
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 18px;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
+    .research-table td, .research-table th {
+        width: 80%;
+        border-collapse: collapse;
+        margin: 20px auto;  
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+        border-bottom: 3px solid #ddd;
+    }
+    .research-table th {
+        background-color: #360a2f;
+        color: white;
+    }   
+    .research-table tr:hover {
+        background-color: #f1f1f1;
+    }
+    .research-table {
+        width: 80%;
+        border-collapse: collapse;
+        margin: 20px auto;  
     }   
 
 
