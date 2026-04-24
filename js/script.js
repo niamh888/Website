@@ -1,2 +1,1 @@
-console.log("Hello, This is Niamh's World!");
-console.log(1 + 1);
+// This is a comment in JavaScript - I have added js script to main index file.
