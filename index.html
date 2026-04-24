@@ -1,107 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Niamh St John Lynch | Doctoral Researcher</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Niamh St John Lynch | Doctoral Researcher</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav aria-label="Site navigation">
-  <div class="nav-inner">
-    <button class="nav-brand" onclick="showPage('home')" aria-label="Niamh St John Lynch — go to home page">Niamh <span aria-hidden="true">St John Lynch</span></button>
-    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
-      <span class="nav-toggle-bar bar1"></span>
-      <span class="nav-toggle-bar bar2"></span>
-      <span class="nav-toggle-bar bar3"></span>
-    </button>
-    <ul class="nav-links" id="nav-links" role="list">
-      <li><a onclick="showPage('home')"        id="nav-home"        class="active" role="button" tabindex="0" aria-current="page">Home</a></li>
-      <li><a onclick="showPage('research')"    id="nav-research"    role="button" tabindex="0">Research</a></li>
-      <li><a onclick="showPage('standards')"   id="nav-standards"   role="button" tabindex="0">Standards</a></li>
-      <li><a onclick="showPage('consulting')"  id="nav-consulting"  role="button" tabindex="0">Consulting</a></li>
-      <li><a onclick="showPage('training')"   id="nav-training"   role="button" tabindex="0">Training</a></li>
-      <li><a onclick="showPage('contact')"     id="nav-contact"     role="button" tabindex="0">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<main id="main-content">
-
-
-<!-- ═══════════ HOME ═══════════ -->
-<div class="page active" id="page-home" role="region" aria-label="Home">
-
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-eyebrow">Doctoral Researcher · Regulatory Scientist</div>
-        <h1>Niamh<br><em>St John Lynch</em></h1>
-        <p class="hero-subtitle">PhD Researcher, DkIT · Registered under DCU · DkIT/UCD Collaborative Project</p>
-        <p class="hero-desc">
-          My research sits at the intersection of <strong style="color:#c9a97a">regulatory science</strong> and
-          <strong style="color:#c9a97a">medical device quality management</strong>, with a particular focus on
-          AI-enabled medical devices under EU MDR and the EU AI Act. I contribute to international
-          standardisation as an IEC TC62 expert member representing Ireland and serve as Chair of NSAI/ETC/TC10.
-        </p>
-        <div class="hero-ctas">
-          <button class="btn btn-gold" onclick="showPage('research')">Research &amp; Publications</button>
-          <button type="button" class="btn btn-outline" onclick="showPage('training')">Training for Industry</button>
-          <button class="btn btn-outline" onclick="showPage('contact')">Get in Touch</button>
+    <nav aria-label="Site navigation">
+        <div class="nav-inner">
+            <button class="nav-brand" onclick="showPage('home')"
+                aria-label="Niamh St John Lynch — go to home page">Niamh <span aria-hidden="true">St John
+                    Lynch</span></button>
+            <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links"
+                aria-label="Open navigation menu">
+                <span class="nav-toggle-bar bar1"></span>
+                <span class="nav-toggle-bar bar2"></span>
+                <span class="nav-toggle-bar bar3"></span>
+            </button>
+            <ul class="nav-links" id="nav-links" role="list">
+                <li><a onclick="showPage('home')" id="nav-home" class="active" role="button" tabindex="0"
+                        aria-current="page">Home</a></li>
+                <li><a onclick="showPage('research')" id="nav-research" role="button" tabindex="0">Research</a></li>
+                <li><a onclick="showPage('standards')" id="nav-standards" role="button" tabindex="0">Standards</a></li>
+                <li><a onclick="showPage('consulting')" id="nav-consulting" role="button" tabindex="0">Consulting</a>
+                </li>
+                <li><a onclick="showPage('training')" id="nav-training" role="button" tabindex="0">Training</a></li>
+                <li><a onclick="showPage('contact')" id="nav-contact" role="button" tabindex="0">Contact</a></li>
+            </ul>
         </div>
-      </div>
-      <div class="hero-card">
-        <div class="hero-card-label">Roles &amp; Affiliations</div>
-        <div class="hero-stat">
-          <div class="hero-stat-val">DkIT · DCU</div>
-          <div class="hero-stat-label">PhD with DkIT, registered under DCU<br>DkIT/UCD Collaborative Project on Trustworthy AI-enabled Medical Devices</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-val">IEC TC62</div>
-          <div class="hero-stat-label">Expert Member, multiple subcommittees — representing Ireland (NSAI)</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-val">NSAI ETC/TC10</div>
-          <div class="hero-stat-label">Committee Chair</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-val">CEN-CENELEC</div>
-          <div class="hero-stat-label">Member, AI Task Groups 1 &amp; 2</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-   <!-- ── Stats strip ── -->
-  <div class="stats-strip" role="region" aria-label="Key statistics">
-    <div class="stats-inner">
-      <div class="stat-item">
-        <span class="stat-val">25<span class="stat-plus">+</span></span>
-        <span class="stat-label">Years in Medical Devices</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item">
-        <span class="stat-val">10<span class="stat-plus">+</span></span>
-        <span class="stat-label">Publications</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item">
-        <span class="stat-val">10<span class="stat-plus">+</span></span>
-        <span class="stat-label">Standards Committees</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item">
-        <span class="stat-val">5</span>
-        <span class="stat-label">Postgraduate Degrees</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item">
-        <span class="stat-val">1</span>
-        <span class="stat-label">National Committee Chair</span>
-      </div>
-    </div>
-  </div>
+    <main id="main-content">
+
+
+        <!-- ═══════════ HOME ═══════════ -->
+        <div class="page active" id="page-home" role="region" aria-label="Home">
+
+            <section class="hero">
+                <div class="hero-inner">
+                    <div>
+                        <div class="hero-eyebrow">Doctoral Researcher · Regulatory Scientist</div>
+                        <h1>Niamh<br><em>St John Lynch</em></h1>
+                        <p class="hero-subtitle">PhD Researcher, DkIT · Registered under DCU · DkIT/UCD Collaborative
+                            Project</p>
+                        <p class="hero-desc">
+                            My research sits at the intersection of <strong style="color:#c9a97a">regulatory
+                                science</strong> and
+                            <strong style="color:#c9a97a">medical device quality management</strong>, with a particular
+                            focus on
+                            AI-enabled medical devices under EU MDR and the EU AI Act. I contribute to international
+                            standardisation as an IEC TC62 expert member representing Ireland and serve as Chair of
+                            NSAI/ETC/TC10.
+                        </p>
+                        <div class="hero-ctas">
+                            <button class="btn btn-gold" onclick="showPage('research')">Research &amp;
+                                Publications</button>
+                            <button type="button" class="btn btn-outline" onclick="showPage('training')">Training for
+                                Industry</button>
+                            <button class="btn btn-outline" onclick="showPage('contact')">Get in Touch</button>
+                        </div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card-label">Roles &amp; Affiliations</div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-val">DkIT · DCU</div>
+                            <div class="hero-stat-label">PhD with DkIT, registered under DCU<br>DkIT/UCD Collaborative
+                                Project on Trustworthy AI-enabled Medical Devices</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-val">IEC TC62</div>
+                            <div class="hero-stat-label">Expert Member, multiple subcommittees — representing Ireland
+                                (NSAI)</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-val">NSAI ETC/TC10</div>
+                            <div class="hero-stat-label">Committee Chair</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-val">CEN-CENELEC</div>
+                            <div class="hero-stat-label">Member, AI Task Groups 1 &amp; 2</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── Stats strip ── -->
+            <div class="stats-strip" role="region" aria-label="Key statistics">
+                <div class="stats-inner">
+                    <div class="stat-item">
+                        <span class="stat-val">25<span class="stat-plus">+</span></span>
+                        <span class="stat-label">Years in Medical Devices</span>
+                    </div>
+                    <div class="stat-divider" aria-hidden="true"></div>
+                    <div class="stat-item">
+                        <span class="stat-val">10<span class="stat-plus">+</span></span>
+                        <span class="stat-label">Publications</span>
+                    </div>
+                    <div class="stat-divider" aria-hidden="true"></div>
+                    <div class="stat-item">
+                        <span class="stat-val">10<span class="stat-plus">+</span></span>
+                        <span class="stat-label">Standards Committees</span>
+                    </div>
+                    <div class="stat-divider" aria-hidden="true"></div>
+                    <div class="stat-item">
+                        <span class="stat-val">5</span>
+                        <span class="stat-label">Postgraduate Degrees</span>
+                    </div>
+                    <div class="stat-divider" aria-hidden="true"></div>
+                    <div class="stat-item">
+                        <span class="stat-val">1</span>
+                        <span class="stat-label">National Committee Chair</span>
+                    </div>
+                </div>
+            </div>
+            <section class="section" style="background: var(--paper);">
+                <div class="section-inner">
+                <div class="section-label">Research Focus</div>
+                <h2 class="section-title">Where Regulatory Science Meets AI Governance</h2>
+                <p class="section-lead">My doctoral work examines the regulatory and quality management challenges posed by AI-enabled medical devices — an area of rapidly evolving policy, standards, and clinical risk.</p>
+                <div class="card-grid card-grid-3">
+                    <div class="card">
+                    <div class="card-tag">EU MDR / AI Act</div>
+                    <h3>Regulatory Frameworks for AI-Enabled Medical Devices</h3>
+                    <p>Investigating the implications of EU MDR 2017/745 and the EU AI Act (Regulation 2024/1689) for manufacturers, including analysis of the EC's Simplification Digital Package and Omnibus Proposal and their impact on AIeMD conformity pathways.</p>
+                    </div>
+                    <div class="card">
+                    <div class="card-tag">Standards Development</div>
+                    <h3>AI-Enabled Medical Device Standards</h3>
+                    <p>Multidisciplinary literature review and gap analysis of international standards relevant to AI-enabled medical devices, assessed against EU AI Act requirements — including IEC 62304, ISO 14971, ISO 42001, IEC PAS 63621, and BS 30440:2023.</p>
+                    </div>
+                    <div class="card">
+                    <div class="card-tag">AI Governance</div>
+                    <h3>Trustworthy AI &amp; Change Management</h3>
+                    <p>Developing frameworks for trustworthy AI in healthcare and agentic AI change management process assessment for medical device manufacturers, including evaluation of pre-trained third-party AI models for responsible and ethical use in medical device software.</p>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="section-inner">
+                <div class="section-label">Recent Publications</div>
+                <h2 class="section-title">Selected Research Output</h2>
+                <p class="section-lead">9 items in the <a href="https://eprints.dkit.ie/view/creators/St_John_Lynch=3ANiamh=3A=3A.html" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule);">DkIT STÓR research repository</a>, spanning journal articles, book chapters, conference papers, research artefacts, and teaching resources.</p>
+                <div class="pub-list">
+                    <div class="pub-item">
+                    <div class="pub-type">Journal Article <span class="pub-status status-press">In Press</span></div>
+                    <div class="pub-title"><a href="https://eprints.dkit.ie/id/eprint/1042/" target="_blank" rel="noopener">A Single Regulatory Framework for AI‑Enabled Medical Devices: Implications of the EU Simplification Digital Package and Omnibus Proposal</a></div>
+                    <div class="pub-authors">St John Lynch, N., Loughran, R., Mc Hugh, M., &amp; McCaffery, F.</div>
+                    <div class="pub-venue">Journal of Medical Device Regulations, 2026</div>
+                    </div>
+                    <div class="pub-item">
+                    <div class="pub-type">Journal Article <span class="pub-status status-submitted">Submitted</span></div>
+                    <div class="pub-title"><a href="https://eprints.dkit.ie/id/eprint/1034/" target="_blank" rel="noopener">Agentic AI for Change Management: A Case Study of the AI Change Management Process Assessment for Medical Device Manufacturers</a></div>
+                    <div class="pub-authors">St John Lynch, N., Mc Hugh, M., Loughran, R., &amp; McCaffery, F.</div>
+                    <div class="pub-venue">Design and Artificial Intelligence, 2026</div>
+                    </div>
+                    <div class="pub-item">
+                    <div class="pub-type">Book Chapter <span class="pub-status status-published">Published</span></div>
+                    <div class="pub-title"><a href="https://eprints.dkit.ie/id/eprint/1044/" target="_blank" rel="noopener">Trustworthy Artificial Intelligence in Healthcare: a proposed framework</a></div>
+                    <div class="pub-authors">St John Lynch, N., Loughran, R., Mc Hugh, M., &amp; McCaffery, F.</div>
+                    <div class="pub-venue">In: Systems, Software and Services Process Improvement. CCIS, 2657. Springer Nature, 2025, pp. 69–90. DOI: 10.1007/978-3-032-04288-0_5</div>
+                    </div>
+                </div>
+                <div style="margin-top: 1.75rem; text-align: right;">
+                    <button class="btn btn-gold" onclick="showPage('research')">View All Publications →</button>
+                </div>
+                </div>
+            </section>
+
+            </div>
