@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Niamh St John Lynch | Doctoral Researcher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav aria-label="Site navigation">
+  <div class="nav-inner">
+    <button class="nav-brand" onclick="showPage('home')" aria-label="Niamh St John Lynch — go to home page">Niamh <span aria-hidden="true">St John Lynch</span></button>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
+      <span class="nav-toggle-bar bar1"></span>
+      <span class="nav-toggle-bar bar2"></span>
+      <span class="nav-toggle-bar bar3"></span>
+    </button>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a onclick="showPage('home')"        id="nav-home"        class="active" role="button" tabindex="0" aria-current="page">Home</a></li>
+      <li><a onclick="showPage('research')"    id="nav-research"    role="button" tabindex="0">Research</a></li>
+      <li><a onclick="showPage('standards')"   id="nav-standards"   role="button" tabindex="0">Standards</a></li>
+      <li><a onclick="showPage('consulting')"  id="nav-consulting"  role="button" tabindex="0">Consulting</a></li>
+      <li><a onclick="showPage('training')"   id="nav-training"   role="button" tabindex="0">Training</a></li>
+      <li><a onclick="showPage('contact')"     id="nav-contact"     role="button" tabindex="0">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main-content">
+
