@@ -1122,3 +1122,20 @@
       document.getElementById('nav-toggle').focus();
     }
   });
+  // Keyboard support for nav links (Enter and Space)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+
+  // Keyboard support for nav brand button
+  document.querySelector('.nav-brand').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      showPage('home');
+    }
+  });
