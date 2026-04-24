@@ -1139,3 +1139,44 @@
       showPage('home');
     }
   });
+
+  
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const successEl = document.getElementById('form-success');
+    const errorEl = document.getElementById('form-error');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    btn.setAttribute('aria-busy', 'true');
+    successEl.style.display = 'none';
+    errorEl.style.display = 'none';
+
+    const FORMSPREE_ID = 'xlgabrqj';
+
+    try {
+      const data = new FormData(this);
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        successEl.style.display = 'block';
+        this.reset();
+        successEl.focus();
+      } else {
+        errorEl.style.display = 'block';
+        errorEl.focus();
+      }
+    } catch (err) {
+      errorEl.style.display = 'block';
+      errorEl.focus();
+    }
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    btn.removeAttribute('aria-busy');
+  });
+</script>
+</body>
+</html>
