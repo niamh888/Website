@@ -1,6 +1,8 @@
 # Niamh St John Lynch — Personal Research Website
 
-Personal academic and consulting overview for Niamh St John Lynch, PhD Researcher at Dundalk Institute of Technology (DkIT), registered under Dublin City University (DCU), as part of the DkIT/UCD Collaborative Project on Trustworthy AI-enabled Medical Devices "RegFrAIMs" and funded by Research Ireland.
+Personal academic and consulting overview for Niamh St John Lynch, PhD Researcher at Dundalk Institute of Technology (DkIT), registered under Dublin City University (DCU), as part of the DkIT/UCD Collaborative Project on Trustworthy AI-enabled Medical Devices "RegFrAIMs" and funded by Research Ireland. 
+
+Source: https://github.com/niamh888/Website.git
 
 ---
 
