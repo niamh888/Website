@@ -1068,7 +1068,7 @@
   <p style="margin-top: 0.4rem;"><a href="https://eprints.dkit.ie/view/creators/St_John_Lynch=3ANiamh=3A=3A.html" target="_blank" rel="noopener" aria-label="DkIT STÓR Research Repository (opens in new tab)">DkIT STÓR Research Repository</a></p>
 </footer>
 <script>
-    
+
   function showPage(id) {
     document.querySelectorAll('.page').forEach(p => {
       p.classList.remove('active');
@@ -1093,3 +1093,32 @@
     // Close mobile menu on navigation
     closeMenu();
   }
+ function closeMenu() {
+    const toggle = document.getElementById('nav-toggle');
+    const links  = document.getElementById('nav-links');
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open navigation menu');
+  }
+
+  // Hamburger toggle
+  document.getElementById('nav-toggle').addEventListener('click', function() {
+    const links   = document.getElementById('nav-links');
+    const isOpen  = links.classList.toggle('open');
+    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    this.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const nav = document.querySelector('nav');
+    if (!nav.contains(e.target)) closeMenu();
+  });
+
+  // Close menu on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeMenu();
+      document.getElementById('nav-toggle').focus();
+    }
+  });
