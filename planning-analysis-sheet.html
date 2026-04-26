@@ -392,8 +392,201 @@
   </ul>
 
 
-  <!-- ══════════════ 4. ACCESSIBILITY ══════════════ -->
-  <h2><span class="section-num">Section 4</span>Accessibility</h2>
+  <!-- ══════════════ 4. VISUAL DESIGN ══════════════ -->
+  <h2><span class="section-num">Section 4</span>Visual Design — Colour &amp; Typography</h2>
+
+  <h3>Design Rationale</h3>
+  <p>
+    The visual design reflects the professional and academic nature of the site — doctoral research,
+    international standardisation, and industry consulting in a regulated, high-stakes domain. The
+    palette deliberately avoids bright or playful colours in favour of a restrained, authoritative
+    aesthetic. The combination of deep navy with warm gold accents is a classic professional pairing
+    used in academic publishing, legal, and financial sectors — conveying trust, precision, and
+    seniority without appearing cold.
+  </p>
+  <p>
+    All colours are defined as <strong>CSS custom properties</strong> (variables) in <code>:root</code>
+    in <code>css/style.css</code>. Changing a single variable value updates every instance across all
+    pages — the design is systematic, not ad hoc.
+  </p>
+
+  <h3>Colour Palette</h3>
+
+  <div style="margin: 1rem 0 1.5rem;">
+    <svg viewBox="0 0 620 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px;height:auto;display:block;" aria-label="Colour swatches for the website design showing ten colours with their hex values and uses">
+      <!-- Row 1 -->
+      <rect x="10"  y="10" width="108" height="66" rx="5" fill="#1a1a2e"/>
+      <text x="64"  y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#c9a97a" font-weight="bold">--ink</text>
+      <text x="64"  y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#8899bb">#1a1a2e</text>
+      <text x="64"  y="88" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#3a3a5c">Nav · Hero · Footer BG</text>
+
+      <rect x="128" y="10" width="108" height="66" rx="5" fill="#3a3a5c"/>
+      <text x="182" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#f7f5f0" font-weight="bold">--ink-mid</text>
+      <text x="182" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#c8cfe0">#3a3a5c</text>
+      <text x="182" y="88" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#3a3a5c">Body text · Card content</text>
+
+      <rect x="246" y="10" width="108" height="66" rx="5" fill="#6a6a8a" stroke="#d8d4cc" stroke-width="0.5"/>
+      <text x="300" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#fff" font-weight="bold">--ink-light</text>
+      <text x="300" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#ddd">#6a6a8a</text>
+      <text x="300" y="88" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#3a3a5c">Metadata · Footer text</text>
+
+      <rect x="364" y="10" width="108" height="66" rx="5" fill="#b08c5a"/>
+      <text x="418" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#1a1a2e" font-weight="bold">--gold</text>
+      <text x="418" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#1a1a2e">#b08c5a</text>
+      <text x="418" y="88" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#3a3a5c">Borders · Labels · CTA btn</text>
+
+      <rect x="482" y="10" width="128" height="66" rx="5" fill="#c9a97a"/>
+      <text x="546" y="48" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#1a1a2e" font-weight="bold">--gold-lt</text>
+      <text x="546" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#1a1a2e">#c9a97a</text>
+      <text x="546" y="88" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#3a3a5c">Hero italic · Stat values</text>
+
+      <!-- Row 2 -->
+      <rect x="10"  y="150" width="108" height="66" rx="5" fill="#2d4a7a"/>
+      <text x="64"  y="188" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#fff" font-weight="bold">--accent</text>
+      <text x="64"  y="200" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#c8cfe0">#2d4a7a</text>
+      <text x="64"  y="228" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#3a3a5c">Links · Tags · Submit btn</text>
+
+      <rect x="128" y="150" width="108" height="66" rx="5" fill="#3d5f99"/>
+      <text x="182" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#fff" font-weight="bold">--accent-lt</text>
+      <text x="182" y="200" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#dde">#3d5f99</text>
+      <text x="182" y="228" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#3a3a5c">Hover states · SVG layers</text>
+
+      <rect x="246" y="150" width="108" height="66" rx="5" fill="#d8d4cc" stroke="#bbb" stroke-width="0.5"/>
+      <text x="300" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#3a3a5c" font-weight="bold">--rule</text>
+      <text x="300" y="200" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#3a3a5c">#d8d4cc</text>
+      <text x="300" y="228" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#3a3a5c">Card borders · Dividers</text>
+
+      <rect x="364" y="150" width="108" height="66" rx="5" fill="#f7f5f0" stroke="#d8d4cc" stroke-width="1"/>
+      <text x="418" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#3a3a5c" font-weight="bold">--cream</text>
+      <text x="418" y="200" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#3a3a5c">#f7f5f0</text>
+      <text x="418" y="228" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#3a3a5c">Page BG · Alt sections</text>
+
+      <rect x="482" y="150" width="128" height="66" rx="5" fill="#ffffff" stroke="#d8d4cc" stroke-width="1"/>
+      <text x="546" y="188" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#3a3a5c" font-weight="bold">--paper</text>
+      <text x="546" y="200" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#3a3a5c">#ffffff</text>
+      <text x="546" y="228" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#3a3a5c">Cards · Form inputs</text>
+    </svg>
+  </div>
+
+  <h3>Colour Roles — How Each Colour Is Used</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>CSS Variable</th>
+        <th>Hex</th>
+        <th>Usage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>--ink</code></td>
+        <td><code>#1a1a2e</code> deep navy</td>
+        <td>Primary heading colour. Background for navigation bar, hero sections, stats strip, dark CTA blocks, and footer. The dominant structural colour — anchors the design.</td>
+      </tr>
+      <tr>
+        <td><code>--ink-mid</code></td>
+        <td><code>#3a3a5c</code> mid navy</td>
+        <td>All body paragraph text, card descriptions, table cell content, and form labels. Slightly lighter than <code>--ink</code> to create a clear typographic hierarchy between headings and body.</td>
+      </tr>
+      <tr>
+        <td><code>--ink-light</code></td>
+        <td><code>#6a6a8a</code> muted purple-grey</td>
+        <td>Secondary metadata: publication venues, year headers, footer copyright, and supplementary label text. Signals lower information priority without disappearing.</td>
+      </tr>
+      <tr>
+        <td><code>--gold</code></td>
+        <td><code>#b08c5a</code> warm gold</td>
+        <td>Primary accent. Nav bar bottom border, section label text and decorative lines, CTA button background, 3px left border on publication items, stat divider lines, and SVG arrow markers. Draws the eye to key structural and interactive elements.</td>
+      </tr>
+      <tr>
+        <td><code>--gold-lt</code></td>
+        <td><code>#c9a97a</code> light gold</td>
+        <td>Hero H1 italic text, nav brand name, highlighted terms within hero body text, stat values, and CTA button hover state. A lighter, warmer variant of gold for display text on dark backgrounds.</td>
+      </tr>
+      <tr>
+        <td><code>--accent</code></td>
+        <td><code>#2d4a7a</code> mid blue</td>
+        <td>All hyperlinks, card tag badge backgrounds, contact form submit button, and standards role pill backgrounds. Clearly distinct from the dark navy background — signals interactivity throughout.</td>
+      </tr>
+      <tr>
+        <td><code>--accent-lt</code></td>
+        <td><code>#3d5f99</code> light blue</td>
+        <td>Hover and active state for accent-coloured elements. Also used as an SVG fill for the medical device technical standards layer in the research diagram.</td>
+      </tr>
+      <tr>
+        <td><code>--rule</code></td>
+        <td><code>#d8d4cc</code> warm grey</td>
+        <td>Card borders, table row dividers, form input borders, horizontal rule lines, and stat dividers in the accessibility table. Deliberately warm (slightly beige) to stay cohesive with the cream background.</td>
+      </tr>
+      <tr>
+        <td><code>--cream</code></td>
+        <td><code>#f7f5f0</code> off-white</td>
+        <td>Page body background. Alternates with <code>--paper</code> between sections to create visual rhythm. Warmer than pure white — reduces eye strain for long-form academic reading.</td>
+      </tr>
+      <tr>
+        <td><code>--paper</code></td>
+        <td><code>#ffffff</code> pure white</td>
+        <td>Card backgrounds and form input backgrounds. Pure white provides maximum contrast for content-dense areas such as publication lists and card grids.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Typography</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Font</th>
+        <th>Type</th>
+        <th>CSS Variable</th>
+        <th>Used For</th>
+        <th>Why</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Cormorant Garamond</strong></td>
+        <td>Serif — display</td>
+        <td><code>--serif</code></td>
+        <td>All H1/H2/H3 headings, hero eyebrow, nav brand name, publication titles, stat values, year headers, standards badges</td>
+        <td>A refined serif with academic and publishing associations. High contrast between thick and thin strokes gives headings gravitas. The italic variant is used for the hero name as a deliberate typographic signature. Loaded at weights 400, 500, 600 and italic variants.</td>
+      </tr>
+      <tr>
+        <td><strong>DM Sans</strong></td>
+        <td>Sans-serif — text</td>
+        <td><code>--sans</code></td>
+        <td>All body paragraphs, nav links, card tags, form labels, buttons, metadata, table content, badges, section labels</td>
+        <td>A geometric sans-serif with high legibility at small sizes on screen. Its clean neutral character does not compete with Cormorant Garamond — the pairing follows the classic editorial serif/sans convention. Loaded at weights 300, 400, and 500.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Typographic Scale</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Font</th>
+        <th>Size</th>
+        <th>Weight / Style</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Hero H1</td><td>Cormorant Garamond</td><td><code>clamp(2.8rem, 5vw, 4.2rem)</code></td><td>500 — italic on surname</td></tr>
+      <tr><td>Section title (H2)</td><td>Cormorant Garamond</td><td><code>clamp(1.8rem, 3vw, 2.6rem)</code></td><td>500</td></tr>
+      <tr><td>Card / pub title (H3)</td><td>Cormorant Garamond</td><td>1.25rem</td><td>500</td></tr>
+      <tr><td>Stat values</td><td>Cormorant Garamond</td><td>2.6rem</td><td>500</td></tr>
+      <tr><td>Body paragraph</td><td>DM Sans</td><td>1rem (16px base)</td><td>400, line-height 1.7</td></tr>
+      <tr><td>Section lead</td><td>DM Sans</td><td>1.08rem</td><td>400, line-height 1.8</td></tr>
+      <tr><td>Nav links</td><td>DM Sans</td><td>0.9rem</td><td>500 — uppercase, 0.05em letter-spacing</td></tr>
+      <tr><td>Section label</td><td>DM Sans</td><td>0.82rem</td><td>500 — uppercase, 0.15em letter-spacing</td></tr>
+      <tr><td>Card tag / badge</td><td>DM Sans</td><td>0.75rem</td><td>400 — uppercase, 0.1em letter-spacing</td></tr>
+      <tr><td>Metadata / venue</td><td>DM Sans</td><td>0.92rem</td><td>400 — italic for venue text</td></tr>
+    </tbody>
+  </table>
+
+
+  <!-- ══════════════ 5. ACCESSIBILITY ══════════════ -->
+  <h2><span class="section-num">Section 5</span>Accessibility</h2>
 
   <p>
     The site targets <strong>WCAG 2.1 Level AA</strong> conformance throughout. Accessibility was treated
@@ -580,7 +773,7 @@
 
 
   <!-- ══════════════ 5. AI & SOFTWARE DEVELOPMENT ══════════════ -->
-  <h2><span class="section-num">Section 5</span>Current Software Development Approaches &amp; AI-Assisted Workflow</h2>
+  <h2><span class="section-num">Section 6</span>Current Software Development Approaches &amp; AI-Assisted Workflow</h2>
 
   <h3>Software Development Approaches</h3>
   <p>The project followed established modern web development practices throughout:</p>
@@ -678,20 +871,10 @@
     </div>
   </div>
 
-  <div class="screenshot-placeholder">
-    [ Insert screenshot here: Claude Code CLI / VS Code extension showing AI-assisted code generation ]<br>
-    <em>Suggested: screenshot of the VS Code sidebar with Claude Code panel open alongside index.html,
-    or a terminal window showing Claude Code output. Use Snipping Tool (Win+Shift+S) to capture.</em>
-  </div>
-
-  <div class="screenshot-placeholder">
-    [ Insert screenshot here: Claude Code suggesting ARIA fixes or the contact form JavaScript ]<br>
-    <em>Suggested: the AI response in the chat pane alongside the resulting code in the editor.</em>
-  </div>
 
 
   <!-- ══════════════ 6. RESPONSIVE DESIGN ══════════════ -->
-  <h2><span class="section-num">Section 6</span>Responsive Design</h2>
+  <h2><span class="section-num">Section 7</span>Responsive Design</h2>
 
   <p>
     The site is built <strong>mobile-first</strong> — base styles target small screens and
@@ -869,7 +1052,7 @@
 
 
   <!-- ══════════════ 7. SITE MAP ══════════════ -->
-  <h2><span class="section-num">Section 7</span>Site Map / Storyboard Flowchart</h2>
+  <h2><span class="section-num">Section 8</span>Site Map / Storyboard Flowchart</h2>
 
   <p>
     All six pages are contained in a single <code>index.html</code> file. Navigation is managed by
@@ -992,7 +1175,7 @@
 
 
   <!-- ══════════════ 6. WIREFRAME ══════════════ -->
-  <h2><span class="section-num">Section 8</span>Wireframe — Home Page</h2>
+  <h2><span class="section-num">Section 9</span>Wireframe — Home Page</h2>
 
   <p>
     The wireframe below represents the <strong>Home page</strong> layout, showing the logo/navigation,
@@ -1158,7 +1341,7 @@
 
 
   <!-- ══════════════ 7. GITHUB REPOSITORY ══════════════ -->
-  <h2><span class="section-num">Section 9</span>GitHub Repository &amp; Best Practices</h2>
+  <h2><span class="section-num">Section 10</span>GitHub Repository &amp; Best Practices</h2>
 
   <div class="info-box">
     <p><strong>Repository URL:</strong> <a href="https://github.com/niamh888/Website">https://github.com/niamh888/Website</a></p>
@@ -1259,7 +1442,7 @@
 
 
   <!-- ══════════════ 8. FUTURE HOSTING ══════════════ -->
-  <h2><span class="section-num">Section 10</span>Future Hosting — www.stjohnlynch.com</h2>
+  <h2><span class="section-num">Section 11</span>Future Hosting — www.stjohnlynch.com</h2>
 
   <div class="info-box">
     <p><strong>Intended production domain:</strong> <a href="https://www.stjohnlynch.com">www.stjohnlynch.com</a></p>
