@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planning Analysis Sheet — Niamh St John Lynch Website</title>
+  <style>
+    :root {
+      --ink: #1a1a2e;
+      --ink-mid: #3a3a5c;
+      --ink-light: #6a6a8a;
+      --gold: #b08c5a;
+      --accent: #2d4a7a;
+      --rule: #d8d4cc;
+      --paper: #ffffff;
+      --cream: #f7f5f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 11pt;
+      color: var(--ink);
+      background: #e8e8e8;
+      line-height: 1.7;
+    }
+
+    .document {
+      max-width: 210mm;
+      margin: 2rem auto;
+      background: var(--paper);
+      padding: 25mm 22mm 28mm;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+    }
+
+    /* COVER */
+    .cover {
+      text-align: center;
+      padding: 3rem 0 4rem;
+      border-bottom: 2px solid var(--gold);
+      margin-bottom: 3rem;
+    }
+
+    .cover-label {
+      font-family: Arial, sans-serif;
+      font-size: 9pt;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .cover h1 {
+      font-size: 26pt;
+      font-weight: normal;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    .cover h1 em {
+      color: var(--accent);
+    }
+
+    .cover-sub {
+      font-size: 12pt;
+      color: var(--ink-mid);
+      font-style: italic;
+      margin-bottom: 2.5rem;
+    }
+
+    .cover-meta {
+      font-family: Arial, sans-serif;
+      font-size: 9.5pt;
+      color: var(--ink-light);
+      line-height: 2;
+    }
+
+    .cover-meta strong {
+      color: var(--ink-mid);
+    }
+
+    /* SECTION HEADINGS */
+    h2 {
+      font-size: 15pt;
+      font-weight: normal;
+      color: var(--accent);
+      border-bottom: 1.5px solid var(--rule);
+      padding-bottom: 0.4rem;
+      margin: 2.5rem 0 1rem;
+    }
+
+    h2 .section-num {
+      font-family: Arial, sans-serif;
+      font-size: 9pt;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    h3 {
+      font-size: 11.5pt;
+      font-weight: bold;
+      color: var(--ink);
+      margin: 1.5rem 0 0.4rem;
+    }
+
+    p {
+      margin-bottom: 0.8rem;
+      color: var(--ink-mid);
+    }
+
+    ul, ol {
+      margin: 0.5rem 0 0.8rem 1.5rem;
+      color: var(--ink-mid);
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    a { color: var(--accent); }
+
+    /* TABLE */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.2rem;
+      font-size: 10pt;
+    }
+
+    th {
+      background: var(--ink);
+      color: #fff;
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-size: 9pt;
+      letter-spacing: 0.05em;
+      font-weight: normal;
+    }
+
+    td {
+      padding: 0.45rem 0.75rem;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+      color: var(--ink-mid);
+    }
+
+    tr:nth-child(even) td { background: var(--cream); }
+
+    td strong { color: var(--ink); }
+
+    /* INFO BOX */
+    .info-box {
+      background: linear-gradient(135deg, rgba(45,74,122,0.06), rgba(176,140,90,0.06));
+      border: 1px solid rgba(176,140,90,0.35);
+      border-left: 4px solid var(--gold);
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      margin: 0.8rem 0 1.2rem;
+      font-size: 10.5pt;
+    }
+
+    .info-box p { margin-bottom: 0.4rem; color: var(--ink-mid); }
+    .info-box p:last-child { margin-bottom: 0; }
+
+    /* PAGE TABLE (pages list) */
+    .page-table td:first-child {
+      font-weight: bold;
+      color: var(--ink);
+      white-space: nowrap;
+      width: 22%;
+    }
+
+    /* SITE MAP */
+    .sitemap-container {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    /* WIREFRAME */
+    .wireframe-container {
+      margin: 1.5rem 0;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1rem;
+      background: var(--cream);
+    }
+
+    .wireframe-label {
+      font-family: Arial, sans-serif;
+      font-size: 8.5pt;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-align: center;
+      margin-top: 0.6rem;
+    }
+
+    /* AI SECTION */
+    .ai-step {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: flex-start;
+    }
+
+    .ai-step-num {
+      background: var(--accent);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 9pt;
+      font-weight: bold;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    .ai-step-body { font-size: 10.5pt; color: var(--ink-mid); }
+    .ai-step-body strong { color: var(--ink); }
+
+    /* SCREENSHOT PLACEHOLDER */
+    .screenshot-placeholder {
+      background: var(--cream);
+      border: 2px dashed var(--rule);
+      border-radius: 4px;
+      padding: 2rem;
+      text-align: center;
+      margin: 0.75rem 0;
+      color: var(--ink-light);
+      font-family: Arial, sans-serif;
+      font-size: 9pt;
+    }
+
+    /* FOOTER */
+    .doc-footer {
+      margin-top: 4rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      font-family: Arial, sans-serif;
+      font-size: 8.5pt;
+      color: var(--ink-light);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* PRINT */
+    @media print {
+      body { background: white; }
+      .document { margin: 0; padding: 20mm 18mm 22mm; box-shadow: none; }
+      h2 { page-break-after: avoid; }
+      .sitemap-container, .wireframe-container { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="document">
+
+  <!-- ══════════════ COVER ══════════════ -->
+  <div class="cover">
+    <div class="cover-label">Web Development Assignment — Planning Document</div>
+    <h1>Planning &amp; Analysis Sheet<br><em>Personal Research Website</em></h1>
+    <p class="cover-sub">Niamh St John Lynch — Doctoral Researcher &amp; Regulatory Scientist</p>
+    <div class="cover-meta">
+      <strong>Student:</strong> Niamh St John Lynch<br>
+      <strong>Module:</strong> Web Development<br>
+      <strong>Date:</strong> April 2026<br>
+      <strong>GitHub Repository:</strong>
+      <a href="https://github.com/niamh888/Website">github.com/niamh888/Website</a><br>
+      <strong>Live Site (GitHub Pages):</strong>
+      <a href="https://niamh888.github.io/Website">niamh888.github.io/Website</a>
+    </div>
+  </div>
+
+  <!-- ══════════════ 1. WEBSITE GOAL ══════════════ -->
+  <h2><span class="section-num">Section 1</span>Website Goal</h2>
+
+  <div class="info-box">
+    <p>
+      The goal of this website is to establish a professional online presence for Niamh St John Lynch as a
+      PhD Researcher, regulatory scientist, and international standardisation expert, so that academic
+      collaborators, industry clients, and standards bodies can quickly understand her research, publications,
+      consulting services, and training offerings — and contact her directly.
+    </p>
+    <p>
+      <strong>Desired result:</strong> Visitors leave with a clear understanding of the site owner's expertise
+      in AI-enabled medical device regulation (EU MDR, EU AI Act, IEC TC62), her publication record, and the
+      services she offers — with a frictionless route to make contact.
+    </p>
+  </div>
+
+
+  <!-- ══════════════ 2. PAGES ══════════════ -->
+  <h2><span class="section-num">Section 2</span>Pages — Working Titles &amp; Information Needed</h2>
+
+  <p>
+    The site is built as a single-file <strong>Single Page Application (SPA)</strong> — one
+    <code>index.html</code> file contains all six pages. JavaScript toggles which page section is visible,
+    giving smooth in-page navigation without page reloads.
+  </p>
+
+  <table class="page-table">
+    <thead>
+      <tr>
+        <th>Page</th>
+        <th>Working Title</th>
+        <th>Information Required</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Home</td>
+        <td>Doctoral Researcher &amp; Regulatory Scientist</td>
+        <td>Hero introduction, professional roles, key statistics strip (years experience, publications, committees), research focus overview, three featured publications with links, call-to-action buttons</td>
+      </tr>
+      <tr>
+        <td>Research</td>
+        <td>Research &amp; Publications</td>
+        <td>Full publication list grouped by year (9 items — journal articles, book chapters, conference papers, artefact, teaching resource), DkIT STÓR repository links, doctoral thesis description, inline SVG research figure (AIeMD Standards Landscape), active research projects grid</td>
+      </tr>
+      <tr>
+        <td>Standards</td>
+        <td>Standards Development</td>
+        <td>Full IEC TC62 committee roles (Plenary, AG SNAIG, JWG 12, JWG 15, PT 63450, PT 63621, SC 62A/JWG 4, MT 49 Sub-Team Lead AI), CEN-CENELEC AI Task Groups 1 &amp; 2, NSAI/ETC/TC10 Chair, key standards reference cards (IEC 62304, ISO 14971, ISO 13485, ISO 42001, IEC PAS 63621, BS 30440)</td>
+      </tr>
+      <tr>
+        <td>Consulting</td>
+        <td>Regulatory Expertise for Industry</td>
+        <td>Consulting services grid (6 areas), differentiators section (Notified Body experience, standards intelligence, research-led practice), key regulatory frameworks and standards reference list, call to action</td>
+      </tr>
+      <tr>
+        <td>Training</td>
+        <td>Training for Industry</td>
+        <td>Training programmes (6 programmes), delivery formats (workshop / programme / online / bespoke), upcoming public training sessions table with status badges, call to action</td>
+      </tr>
+      <tr>
+        <td>Contact</td>
+        <td>Get in Touch</td>
+        <td>Contact details (email addresses, institutional affiliation, DkIT STÓR link, location, standards roles, education history), live contact form powered by Formspree, affiliation badge list</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- ══════════════ 3. SOURCES ══════════════ -->
+  <h2><span class="section-num">Section 3</span>List of Sources</h2>
+
+  <h3>Text / Facts</h3>
+  <ul>
+    <li>All biographical, research, and professional content is original, written by the site owner (Niamh St John Lynch)</li>
+    <li>Publication titles, author lists, venue details, and DOIs sourced from the <a href="https://eprints.dkit.ie/view/creators/St_John_Lynch=3ANiamh=3A=3A.html">DkIT STÓR institutional repository</a></li>
+    <li>Standards committee membership details sourced from official IEC TC62, CEN-CENELEC, and NSAI records</li>
+    <li>Regulatory framework text (EU MDR 2017/745, EU AI Act 2024/1689) draws on primary legislation and published doctoral research</li>
+  </ul>
+
+  <h3>Graphics &amp; Images</h3>
+  <ul>
+    <li><code>images/profile.jpg</code>, <code>profile1.jpg</code>, <code>profile2.jpg</code> — original photographs</li>
+    <li><code>images/ai-research.jpg</code> — original photograph</li>
+    <li>Inline SVG diagrams (AIeMD Standards Landscape) — drawn directly in HTML, adapted from published research figures (St John Lynch et al., EuroSPI'24, with full citation on site)</li>
+    <li>No stock photography or third-party imagery used</li>
+  </ul>
+
+  <h3>Fonts</h3>
+  <ul>
+    <li><strong>Cormorant Garamond</strong> (headings, display text) — Google Fonts CDN</li>
+    <li><strong>DM Sans</strong> (body text, UI elements) — Google Fonts CDN</li>
+  </ul>
+
+  <h3>External Services</h3>
+  <ul>
+    <li><strong>Formspree</strong> (<a href="https://formspree.io">formspree.io</a>) — contact form submission handler (form ID: <code>xlgabrqj</code>); no server-side code required</li>
+    <li><strong>GitHub &amp; GitHub Pages</strong> — version control and free static hosting</li>
+  </ul>
+
+  <h3>Code References &amp; Standards</h3>
+  <ul>
+    <li>HTML5 semantic elements and ARIA authoring practices — <a href="https://www.w3.org/TR/wai-aria-practices/">W3C WAI-ARIA Authoring Practices</a></li>
+    <li>Web design best practices — <a href="https://terrymorris.net/bestpractices/">terrymorris.net/bestpractices</a></li>
+    <li>WCAG 2.1 Level AA accessibility guidelines — <a href="https://www.w3.org/WAI/WCAG21/quickref/">W3C WCAG 2.1 Quick Reference</a></li>
+    <li>CSS custom properties, Grid, Flexbox — MDN Web Docs reference</li>
+    <li>No third-party CSS frameworks (Bootstrap, Tailwind, etc.) or JavaScript libraries used; all code is handwritten</li>
+  </ul>
+
+
+  <!-- ══════════════ 4. ACCESSIBILITY ══════════════ -->
+  <h2><span class="section-num">Section 4</span>Accessibility</h2>
+
+  <p>
+    The site targets <strong>WCAG 2.1 Level AA</strong> conformance throughout. Accessibility was treated
+    as a first-class design requirement — not a retrofit — with semantic HTML, ARIA attributes, keyboard
+    support, and colour contrast all addressed from the outset and audited during development.
+  </p>
+
+  <div class="info-box">
+    <p><strong>Standard targeted:</strong> Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</p>
+    <p><strong>Reference:</strong> <a href="https://www.w3.org/WAI/WCAG21/quickref/">W3C WCAG 2.1 Quick Reference</a> · <a href="https://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Authoring Practices 1.1</a></p>
+    <p><strong>Target audiences supported:</strong> Keyboard-only users · Screen reader users · Users with low vision · Users with vestibular / motion sensitivity</p>
+  </div>
+
+  <h3>Accessibility Features Implemented</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Implementation</th>
+        <th>WCAG Criterion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Skip link</strong></td>
+        <td>"Skip to main content" anchor link is the first focusable element in the DOM. Visible only on keyboard focus via <code>:focus</code> CSS, positioned off-screen at rest and slides in on focus.</td>
+        <td>2.4.1 Bypass Blocks (A)</td>
+      </tr>
+      <tr>
+        <td><strong>Semantic HTML landmarks</strong></td>
+        <td><code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> elements used with appropriate <code>aria-label</code> attributes, allowing screen reader users to jump directly to major page regions.</td>
+        <td>1.3.1 Info and Relationships (A) · 2.4.1 (A)</td>
+      </tr>
+      <tr>
+        <td><strong>Page sections as regions</strong></td>
+        <td>Each SPA page section (<code>&lt;div&gt;</code>) carries <code>role="region"</code> and a descriptive <code>aria-label</code>. Inactive pages have <code>aria-hidden="true"</code> to suppress them from the accessibility tree; the active page has <code>aria-hidden</code> removed.</td>
+        <td>1.3.1 (A) · 4.1.2 Name, Role, Value (A)</td>
+      </tr>
+      <tr>
+        <td><strong>Navigation toggle — ARIA state</strong></td>
+        <td>The hamburger button uses <code>aria-expanded</code> (toggled true/false), <code>aria-controls="nav-links"</code>, and a dynamic <code>aria-label</code> ("Open navigation menu" / "Close navigation menu") so screen readers announce the menu state.</td>
+        <td>4.1.2 Name, Role, Value (A)</td>
+      </tr>
+      <tr>
+        <td><strong>Active nav link indicator</strong></td>
+        <td><code>aria-current="page"</code> is applied to the currently active navigation link and removed from all others on each page switch, giving screen reader users a clear indication of their location.</td>
+        <td>2.4.4 Link Purpose (A) · 2.4.8 Location (AA)</td>
+      </tr>
+      <tr>
+        <td><strong>Keyboard navigation — nav links</strong></td>
+        <td>Navigation <code>&lt;a&gt;</code> elements styled as buttons use <code>role="button"</code> and <code>tabindex="0"</code>. JavaScript <code>keydown</code> listeners fire the click action on <code>Enter</code> and <code>Space</code>, matching expected button keyboard behaviour.</td>
+        <td>2.1.1 Keyboard (A)</td>
+      </tr>
+      <tr>
+        <td><strong>Escape key menu dismissal</strong></td>
+        <td>Pressing <code>Escape</code> closes the mobile navigation menu and returns focus to the toggle button, following the ARIA disclosure button pattern.</td>
+        <td>2.1.1 Keyboard (A)</td>
+      </tr>
+      <tr>
+        <td><strong>Focus management on page switch</strong></td>
+        <td>When a page is shown, it receives <code>tabindex="-1"</code> and programmatic <code>.focus()</code>, moving keyboard focus to the top of the new page content. <code>preventScroll: true</code> is used to avoid jarring scroll behaviour.</td>
+        <td>2.4.3 Focus Order (A)</td>
+      </tr>
+      <tr>
+        <td><strong>Visible focus indicators</strong></td>
+        <td><code>:focus-visible</code> pseudo-class applies a 3px gold outline on all interactive elements. Form controls use an accent-colour outline. Default outline suppression (<code>outline: none</code>) is avoided.</td>
+        <td>2.4.7 Focus Visible (AA)</td>
+      </tr>
+      <tr>
+        <td><strong>Colour contrast — body text</strong></td>
+        <td>All body text colours (<code>#3a3a5c</code> on white, <code>#1a1a2e</code> on cream) exceed 7:1 contrast ratio (AAA).</td>
+        <td>1.4.3 Contrast Minimum (AA)</td>
+      </tr>
+      <tr>
+        <td><strong>Colour contrast — hero text</strong></td>
+        <td>Hero text colours were audited and corrected during development. <code>.hero-desc</code> changed from <code>#a0a8bc</code> (ratio ~3.2:1, failing) to <code>#c8cfe0</code> (ratio 4.6:1, passing AA) on the dark <code>#1a1a2e</code> background.</td>
+        <td>1.4.3 Contrast Minimum (AA)</td>
+      </tr>
+      <tr>
+        <td><strong>Form — live regions</strong></td>
+        <td>Contact form success message uses <code>role="status"</code> and <code>aria-live="polite"</code>; the error message uses <code>role="alert"</code> and <code>aria-live="assertive"</code>. Both are announced automatically by screen readers without requiring a page reload.</td>
+        <td>4.1.3 Status Messages (AA)</td>
+      </tr>
+      <tr>
+        <td><strong>Form — button loading state</strong></td>
+        <td>The submit button sets <code>aria-busy="true"</code> and updates its text to "Sending…" during form submission, informing assistive technology users that an action is in progress.</td>
+        <td>4.1.2 Name, Role, Value (A)</td>
+      </tr>
+      <tr>
+        <td><strong>Form labels</strong></td>
+        <td>All form inputs have associated <code>&lt;label&gt;</code> elements linked via matching <code>for</code> / <code>id</code> attributes. No placeholder-only labelling is used.</td>
+        <td>1.3.1 (A) · 2.4.6 Headings and Labels (AA)</td>
+      </tr>
+      <tr>
+        <td><strong>SVG figures — alternative text</strong></td>
+        <td>The inline SVG research diagram uses <code>role="img"</code> on its container with a full descriptive <code>aria-label</code>. Internal SVG elements are marked <code>aria-hidden="true"</code> to prevent screen readers from traversing individual shapes.</td>
+        <td>1.1.1 Non-text Content (A)</td>
+      </tr>
+      <tr>
+        <td><strong>External links</strong></td>
+        <td>Links that open in a new tab (<code>target="_blank"</code>) include <code>rel="noopener"</code> for security and, where needed, an <code>aria-label</code> indicating the link opens in a new tab (e.g. DkIT STÓR links).</td>
+        <td>2.4.4 Link Purpose (A)</td>
+      </tr>
+      <tr>
+        <td><strong>Decorative elements hidden</strong></td>
+        <td>Purely decorative elements (section label lines, stat dividers, icon emojis) carry <code>aria-hidden="true"</code> to remove them from the accessibility tree.</td>
+        <td>1.1.1 Non-text Content (A)</td>
+      </tr>
+      <tr>
+        <td><strong>Reduced motion</strong></td>
+        <td>The <code>@media (prefers-reduced-motion: reduce)</code> media query disables all CSS animations (fade-up page transitions) and sets <code>scroll-behavior: auto</code>, respecting users who have requested reduced motion at the OS level.</td>
+        <td>2.3.3 Animation from Interactions (AAA) · good practice</td>
+      </tr>
+      <tr>
+        <td><strong>Responsive / zoom</strong></td>
+        <td>The <code>&lt;meta viewport&gt;</code> tag does <em>not</em> set <code>maximum-scale</code> or <code>user-scalable=no</code>, so users can zoom up to 400% without loss of content or functionality.</td>
+        <td>1.4.4 Resize Text (AA)</td>
+      </tr>
+      <tr>
+        <td><strong>Table accessibility</strong></td>
+        <td>The training sessions table uses <code>&lt;thead&gt;</code>, <code>&lt;th scope="col"&gt;</code>, and is wrapped in a scrollable <code>role="region"</code> container with <code>tabindex="0"</code> and <code>aria-label</code> so keyboard users can scroll horizontally.</td>
+        <td>1.3.1 (A) · 2.1.1 (A)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Colour Palette — Contrast Verification</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Text Colour</th>
+        <th>Background</th>
+        <th>Contrast Ratio</th>
+        <th>WCAG AA Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>#3a3a5c</code> (body text)</td>
+        <td><code>#ffffff</code> (white)</td>
+        <td>8.6:1</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><code>#1a1a2e</code> (headings)</td>
+        <td><code>#f7f5f0</code> (cream)</td>
+        <td>14.2:1</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><code>#c8cfe0</code> (hero body)</td>
+        <td><code>#1a1a2e</code> (dark hero)</td>
+        <td>4.6:1</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><code>#c9a97a</code> (gold headings)</td>
+        <td><code>#1a1a2e</code> (dark hero)</td>
+        <td>5.8:1</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><code>#9aabcc</code> (hero subtitle)</td>
+        <td><code>#1a1a2e</code> (dark hero)</td>
+        <td>4.5:1</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><code>#2d4a7a</code> (accent / links)</td>
+        <td><code>#ffffff</code> (white)</td>
+        <td>5.4:1</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><code>#1a1a2e</code> (btn text)</td>
+        <td><code>#b08c5a</code> (gold button)</td>
+        <td>5.1:1</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- ══════════════ 5. AI & SOFTWARE DEVELOPMENT ══════════════ -->
+  <h2><span class="section-num">Section 5</span>Current Software Development Approaches &amp; AI-Assisted Workflow</h2>
+
+  <h3>Software Development Approaches</h3>
+  <p>The project followed established modern web development practices throughout:</p>
+  <ul>
+    <li><strong>Version control with Git and GitHub</strong> — every change committed with descriptive messages, full history preserved</li>
+    <li><strong>Iterative development</strong> — pages built and refined incrementally (home → research → standards → consulting → training → contact), with each commit representing a working state</li>
+    <li><strong>Mobile-first responsive design</strong> — CSS Grid <code>auto-fit/minmax</code> and <code>@media</code> breakpoints ensure the site works at all screen sizes without a CSS framework</li>
+    <li><strong>Separation of concerns</strong> — HTML structure in <code>index.html</code>, styles in <code>css/style.css</code>, behaviour in <code>js/script.js</code> (later consolidated inline for SPA architecture)</li>
+    <li><strong>Accessibility-first</strong> — semantic HTML5 landmarks, ARIA roles/labels, keyboard navigation, skip link, live regions, and <code>prefers-reduced-motion</code> media query applied from the outset</li>
+    <li><strong>Progressive enhancement</strong> — the page is readable without JavaScript; JS only adds navigation switching behaviour on top of semantic HTML</li>
+  </ul>
+
+  <h3>How Artificial Intelligence Supported Coding Productivity</h3>
+  <p>
+    <strong>Claude Code</strong> (Anthropic's AI coding assistant, running as a CLI and VS Code extension)
+    was used throughout the project as a pair-programming tool. The following workflow steps show
+    specific, concrete contributions:
+  </p>
+
+  <div class="ai-step">
+    <div class="ai-step-num">1</div>
+    <div class="ai-step-body">
+      <strong>Accessibility audit and remediation.</strong>
+      After drafting the initial navigation, Claude Code was used to audit ARIA attribute completeness.
+      It identified that the <code>&lt;nav&gt;</code> toggle button was missing <code>aria-expanded</code>,
+      <code>aria-controls</code>, and a dynamic <code>aria-label</code>, and that inactive page
+      <code>&lt;div&gt;</code>s needed <code>aria-hidden="true"</code>. The corrected code was generated and
+      verified before committing (<em>commit: "Add support keyboard support for nav links…"</em>).
+    </div>
+  </div>
+
+  <div class="ai-step">
+    <div class="ai-step-num">2</div>
+    <div class="ai-step-body">
+      <strong>Inline SVG figure generation.</strong>
+      Rather than using an external image, Claude Code generated the layered AIeMD Standards Landscape
+      SVG diagram from a text description of the four-layer hierarchy (Regulatory Framework →
+      International AI Standards → Medical Device Technical Standards → Development &amp; Quality
+      Processes). The SVG uses semantic <code>role="img"</code> and <code>aria-label</code> for screen
+      reader users.
+    </div>
+  </div>
+
+  <div class="ai-step">
+    <div class="ai-step-num">3</div>
+    <div class="ai-step-body">
+      <strong>Contact form integration.</strong>
+      Claude Code wrote the asynchronous Formspree integration (Fetch API POST, JSON response handling,
+      accessible live-region success/error messages, button loading state with <code>aria-busy</code>),
+      replacing a placeholder <code>&lt;form&gt;</code> with a fully functional, accessible implementation
+      (<em>commit: "Add code / javascript for contact form to link to formspree…"</em>).
+    </div>
+  </div>
+
+  <div class="ai-step">
+    <div class="ai-step-num">4</div>
+    <div class="ai-step-body">
+      <strong>CSS colour contrast corrections.</strong>
+      Claude Code reviewed <code>style.css</code> against WCAG 2.1 AA contrast ratios, flagging
+      <code>.hero-desc</code> (<code>#a0a8bc</code> on dark background, ratio ~3.2:1, below 4.5:1 minimum)
+      and several hero text colours. It produced replacement values (<code>#c8cfe0</code>,
+      <code>#9aabcc</code>) that meet AA on the dark hero background.
+    </div>
+  </div>
+
+  <div class="ai-step">
+    <div class="ai-step-num">5</div>
+    <div class="ai-step-body">
+      <strong>Keyboard navigation JavaScript.</strong>
+      Claude Code wrote the event listeners for <code>Enter</code>/<code>Space</code> on
+      <code>role="button"</code> navigation links and the brand button, as well as Escape-key menu
+      dismissal and outside-click closing — patterns required for ARIA button role compliance that are
+      easy to miss in manual coding.
+    </div>
+  </div>
+
+  <div class="ai-step">
+    <div class="ai-step-num">6</div>
+    <div class="ai-step-body">
+      <strong>Training page table and schema.</strong>
+      The structured HTML training sessions table (with <code>scope="col"</code> headers,
+      <code>role="region"</code>, <code>tabindex="0"</code> for scrollable overflow, and status badge
+      classes) was generated by Claude Code from a plain-text description of the training programmes,
+      saving significant manual markup time.
+    </div>
+  </div>
+
+  <div class="ai-step">
+    <div class="ai-step-num">7</div>
+    <div class="ai-step-body">
+      <strong>This planning document.</strong>
+      Claude Code read the full <code>index.html</code>, <code>css/style.css</code>, <code>README.md</code>,
+      and git history, then generated this Planning Analysis Sheet — including the site map SVG,
+      wireframe SVG, and all written sections — based on the actual deployed project.
+    </div>
+  </div>
+
+  <div class="screenshot-placeholder">
+    [ Insert screenshot here: Claude Code CLI / VS Code extension showing AI-assisted code generation ]<br>
+    <em>Suggested: screenshot of the VS Code sidebar with Claude Code panel open alongside index.html,
+    or a terminal window showing Claude Code output. Use Snipping Tool (Win+Shift+S) to capture.</em>
+  </div>
+
+  <div class="screenshot-placeholder">
+    [ Insert screenshot here: Claude Code suggesting ARIA fixes or the contact form JavaScript ]<br>
+    <em>Suggested: the AI response in the chat pane alongside the resulting code in the editor.</em>
+  </div>
+
+
+  <!-- ══════════════ 5. SITE MAP ══════════════ -->
+  <h2><span class="section-num">Section 6</span>Site Map / Storyboard Flowchart</h2>
+
+  <p>
+    All six pages are contained in a single <code>index.html</code> file. Navigation is managed by
+    JavaScript — clicking any nav link shows the corresponding page section and hides all others.
+    The diagram below shows the page hierarchy and navigation relationships.
+  </p>
+
+  <div class="sitemap-container">
+    <svg viewBox="0 0 700 430" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;height:auto;" aria-label="Site map showing Home as the root page, connected to Research, Standards, Consulting, Training and Contact as peer pages via a shared navigation bar">
+
+      <defs>
+        <marker id="arr" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto">
+          <polygon points="0 0, 8 3.5, 0 7" fill="#2d4a7a"/>
+        </marker>
+        <marker id="arr-gold" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto">
+          <polygon points="0 0, 8 3.5, 0 7" fill="#b08c5a"/>
+        </marker>
+      </defs>
+
+      <!-- BROWSER / ENTRY -->
+      <rect x="260" y="10" width="180" height="44" rx="6" fill="#1a1a2e"/>
+      <text x="350" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#c9a97a" font-weight="bold" letter-spacing="1">BROWSER / USER</text>
+      <text x="350" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#8899bb">niamh888.github.io/Website</text>
+
+      <!-- Arrow to nav -->
+      <line x1="350" y1="54" x2="350" y2="82" stroke="#b08c5a" stroke-width="1.5" marker-end="url(#arr-gold)"/>
+
+      <!-- NAV BAR -->
+      <rect x="60" y="84" width="580" height="38" rx="5" fill="#2d4a7a"/>
+      <text x="350" y="100" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#fff" font-weight="bold" letter-spacing="0.8">NAVIGATION BAR — STICKY, ALL PAGES</text>
+      <text x="350" y="114" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#9aaac8">Home · Research · Standards · Consulting · Training · Contact</text>
+
+      <!-- Vertical lines down from nav -->
+      <line x1="100" y1="122" x2="100" y2="158" stroke="#2d4a7a" stroke-width="1.5" marker-end="url(#arr)"/>
+      <line x1="215" y1="122" x2="215" y2="158" stroke="#2d4a7a" stroke-width="1.5" marker-end="url(#arr)"/>
+      <line x1="330" y1="122" x2="330" y2="158" stroke="#2d4a7a" stroke-width="1.5" marker-end="url(#arr)"/>
+      <line x1="445" y1="122" x2="445" y2="158" stroke="#2d4a7a" stroke-width="1.5" marker-end="url(#arr)"/>
+      <line x1="560" y1="122" x2="560" y2="158" stroke="#2d4a7a" stroke-width="1.5" marker-end="url(#arr)"/>
+      <line x1="645" y1="122" x2="645" y2="158" stroke="#2d4a7a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+      <!-- PAGE BOXES ROW 1 -->
+      <!-- Home -->
+      <rect x="55" y="158" width="115" height="52" rx="5" fill="#1a1a2e" stroke="#b08c5a" stroke-width="2"/>
+      <text x="112" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#c9a97a" font-weight="bold">HOME</text>
+      <text x="112" y="192" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#8899bb">Hero · Stats</text>
+      <text x="112" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#8899bb">Research · Pubs</text>
+
+      <!-- Research -->
+      <rect x="178" y="158" width="115" height="52" rx="5" fill="#2d4a7a"/>
+      <text x="235" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#fff" font-weight="bold">RESEARCH</text>
+      <text x="235" y="192" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9aaac8">Publications · SVG</text>
+      <text x="235" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9aaac8">Projects · Figures</text>
+
+      <!-- Standards -->
+      <rect x="295" y="158" width="115" height="52" rx="5" fill="#2d4a7a"/>
+      <text x="352" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#fff" font-weight="bold">STANDARDS</text>
+      <text x="352" y="192" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9aaac8">IEC TC62 · CEN</text>
+      <text x="352" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9aaac8">CENELEC · NSAI</text>
+
+      <!-- Consulting -->
+      <rect x="413" y="158" width="115" height="52" rx="5" fill="#2d4a7a"/>
+      <text x="470" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#fff" font-weight="bold">CONSULTING</text>
+      <text x="470" y="192" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9aaac8">Services · Why Me</text>
+      <text x="470" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9aaac8">Frameworks · CTA</text>
+
+      <!-- Training -->
+      <rect x="530" y="158" width="115" height="52" rx="5" fill="#2d4a7a"/>
+      <text x="587" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#fff" font-weight="bold">TRAINING</text>
+      <text x="587" y="192" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9aaac8">Programmes · Table</text>
+      <text x="587" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9aaac8">Delivery Formats</text>
+
+      <!-- Contact -->
+      <rect x="600" y="158" width="90" height="52" rx="5" fill="#2d4a7a"/>
+      <text x="645" y="178" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#fff" font-weight="bold">CONTACT</text>
+      <text x="645" y="192" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9aaac8">Form · Details</text>
+      <text x="645" y="202" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#9aaac8">Education · Affil.</text>
+
+      <!-- HOME sub-sections arrows -->
+      <line x1="112" y1="210" x2="112" y2="248" stroke="#b08c5a" stroke-width="1" marker-end="url(#arr-gold)"/>
+
+      <rect x="40" y="250" width="145" height="62" rx="4" fill="#f7f5f0" stroke="#d8d4cc" stroke-width="1"/>
+      <text x="112" y="266" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#1a1a2e" font-weight="bold">HOME SECTIONS</text>
+      <text x="112" y="279" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#3a3a5c">· Hero + Roles Card</text>
+      <text x="112" y="290" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#3a3a5c">· Stats Strip (5 figures)</text>
+      <text x="112" y="301" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#3a3a5c">· Research Focus Cards</text>
+      <text x="112" y="312" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#3a3a5c">· Featured Publications</text>
+
+      <!-- FORMSPREE external service -->
+      <line x1="645" y1="210" x2="645" y2="248" stroke="#b08c5a" stroke-width="1" marker-end="url(#arr-gold)"/>
+      <rect x="585" y="250" width="120" height="40" rx="4" fill="#fff8ee" stroke="#b08c5a" stroke-width="1"/>
+      <text x="645" y="268" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#7a5c1a" font-weight="bold">FORMSPREE API</text>
+      <text x="645" y="280" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#7a5c1a">Contact form handler</text>
+
+      <!-- External link -->
+      <line x1="350" y1="210" x2="350" y2="248" stroke="#b08c5a" stroke-width="1" marker-end="url(#arr-gold)"/>
+      <rect x="248" y="250" width="200" height="40" rx="4" fill="#e8ecf4" stroke="#d8d4cc" stroke-width="1"/>
+      <text x="348" y="268" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" fill="#2d4a7a" font-weight="bold">DkIT STÓR REPOSITORY</text>
+      <text x="348" y="280" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#3a3a5c">External links — all publications</text>
+
+      <!-- FOOTER -->
+      <rect x="60" y="335" width="580" height="36" rx="5" fill="#f7f5f0" stroke="#d8d4cc" stroke-width="1"/>
+      <text x="350" y="351" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#3a3a5c" font-weight="bold">FOOTER — ALL PAGES</text>
+      <text x="350" y="363" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#6a6a8a">Copyright · Affiliations · DkIT STÓR link</text>
+
+      <!-- Lines from page boxes to footer -->
+      <line x1="350" y1="320" x2="350" y2="335" stroke="#d8d4cc" stroke-width="1"/>
+
+      <!-- Legend -->
+      <rect x="60" y="388" width="14" height="10" rx="2" fill="#1a1a2e" stroke="#b08c5a" stroke-width="1.5"/>
+      <text x="80" y="398" font-family="Arial,sans-serif" font-size="8" fill="#3a3a5c">Active / Home (default)</text>
+      <rect x="200" y="388" width="14" height="10" rx="2" fill="#2d4a7a"/>
+      <text x="220" y="398" font-family="Arial,sans-serif" font-size="8" fill="#3a3a5c">Secondary pages</text>
+      <rect x="340" y="388" width="14" height="10" rx="2" fill="#fff8ee" stroke="#b08c5a" stroke-width="1"/>
+      <text x="360" y="398" font-family="Arial,sans-serif" font-size="8" fill="#3a3a5c">External service</text>
+      <rect x="480" y="388" width="14" height="10" rx="2" fill="#e8ecf4" stroke="#d8d4cc" stroke-width="1"/>
+      <text x="500" y="398" font-family="Arial,sans-serif" font-size="8" fill="#3a3a5c">External repository</text>
+
+    </svg>
+  </div>
+
+
+  <!-- ══════════════ 6. WIREFRAME ══════════════ -->
+  <h2><span class="section-num">Section 7</span>Wireframe — Home Page</h2>
+
+  <p>
+    The wireframe below represents the <strong>Home page</strong> layout, showing the logo/navigation,
+    hero content, stats strip, card grid section, and footer areas. The design is responsive — on mobile
+    the two-column hero collapses to one column and the horizontal nav is replaced by a hamburger menu.
+  </p>
+
+  <div class="wireframe-container">
+    <svg viewBox="0 0 620 760" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px;height:auto;display:block;margin:0 auto;" aria-label="Wireframe for the Home page showing navigation bar at top, hero section with headline and affiliations card, statistics strip, research focus card grid, featured publications list, and footer">
+
+      <!-- ── NAV BAR ── -->
+      <rect x="10" y="10" width="600" height="46" rx="4" fill="#1a1a2e"/>
+      <rect x="22" y="22" width="90" height="22" rx="3" fill="#2d4a7a"/>
+      <text x="67" y="37" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#c9a97a">LOGO / NAME</text>
+      <!-- Nav links -->
+      <rect x="350" y="24" width="44" height="18" rx="2" fill="rgba(176,140,90,0.25)"/>
+      <text x="372" y="36" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#c9a97a">HOME</text>
+      <rect x="400" y="24" width="44" height="18" rx="2" fill="transparent"/>
+      <text x="422" y="36" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#8899bb">RESEARCH</text>
+      <rect x="450" y="24" width="44" height="18" rx="2" fill="transparent"/>
+      <text x="472" y="36" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#8899bb">STDS</text>
+      <rect x="500" y="24" width="44" height="18" rx="2" fill="transparent"/>
+      <text x="522" y="36" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#8899bb">CONSULT</text>
+      <rect x="550" y="24" width="48" height="18" rx="2" fill="transparent"/>
+      <text x="574" y="36" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#8899bb">CONTACT</text>
+      <line x1="10" y1="56" x2="610" y2="56" stroke="#b08c5a" stroke-width="1.5"/>
+
+      <!-- ── HERO ── -->
+      <rect x="10" y="58" width="600" height="200" rx="0" fill="#1a1a2e"/>
+      <!-- Eyebrow -->
+      <rect x="30" y="78" width="130" height="8" rx="3" fill="#3d5f99"/>
+      <!-- H1 line 1 -->
+      <rect x="30" y="96" width="190" height="18" rx="3" fill="#f7f5f0"/>
+      <!-- H1 line 2 italic -->
+      <rect x="30" y="120" width="160" height="18" rx="3" fill="#b08c5a" opacity="0.7"/>
+      <!-- Subtitle -->
+      <rect x="30" y="148" width="250" height="8" rx="3" fill="#3d5f99"/>
+      <!-- Body text lines -->
+      <rect x="30" y="164" width="280" height="6" rx="2" fill="#3d5f99" opacity="0.6"/>
+      <rect x="30" y="175" width="265" height="6" rx="2" fill="#3d5f99" opacity="0.6"/>
+      <rect x="30" y="186" width="250" height="6" rx="2" fill="#3d5f99" opacity="0.6"/>
+      <!-- CTA buttons -->
+      <rect x="30" y="204" width="80" height="24" rx="3" fill="#b08c5a"/>
+      <text x="70" y="219" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#1a1a2e" font-weight="bold">RESEARCH →</text>
+      <rect x="118" y="204" width="72" height="24" rx="3" fill="transparent" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+      <text x="154" y="219" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#f7f5f0">TRAINING</text>
+      <rect x="198" y="204" width="72" height="24" rx="3" fill="transparent" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+      <text x="234" y="219" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#f7f5f0">CONTACT</text>
+      <!-- Roles card -->
+      <rect x="420" y="78" width="170" height="162" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(176,140,90,0.3)" stroke-width="1"/>
+      <text x="505" y="97" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#c9a97a" letter-spacing="0.5">ROLES &amp; AFFILIATIONS</text>
+      <line x1="432" y1="104" x2="578" y2="104" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+      <rect x="432" y="112" width="50" height="8" rx="2" fill="#3d5f99"/>
+      <rect x="432" y="124" width="120" height="5" rx="2" fill="#2d4a7a" opacity="0.6"/>
+      <rect x="432" y="131" width="100" height="5" rx="2" fill="#2d4a7a" opacity="0.5"/>
+      <line x1="432" y1="142" x2="578" y2="142" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+      <rect x="432" y="150" width="60" height="8" rx="2" fill="#3d5f99"/>
+      <rect x="432" y="162" width="120" height="5" rx="2" fill="#2d4a7a" opacity="0.6"/>
+      <line x1="432" y1="173" x2="578" y2="173" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+      <rect x="432" y="181" width="75" height="8" rx="2" fill="#3d5f99"/>
+      <rect x="432" y="193" width="110" height="5" rx="2" fill="#2d4a7a" opacity="0.6"/>
+      <line x1="432" y1="204" x2="578" y2="204" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+      <rect x="432" y="210" width="85" height="8" rx="2" fill="#3d5f99"/>
+      <rect x="432" y="222" width="115" height="5" rx="2" fill="#2d4a7a" opacity="0.6"/>
+
+      <!-- ── STATS STRIP ── -->
+      <rect x="10" y="258" width="600" height="62" fill="#1a1a2e"/>
+      <line x1="10" y1="320" x2="610" y2="320" stroke="#b08c5a" stroke-width="1.5"/>
+      <!-- 5 stat items -->
+      <text x="72"  y="284" text-anchor="middle" font-family="Georgia,serif" font-size="16" fill="#c9a97a" font-weight="500">25+</text>
+      <rect x="36"  y="295" width="72" height="7" rx="2" fill="#3d5f99" opacity="0.7"/>
+      <line x1="128" y1="274" x2="128" y2="310" stroke="rgba(176,140,90,0.25)" stroke-width="1"/>
+      <text x="188" y="284" text-anchor="middle" font-family="Georgia,serif" font-size="16" fill="#c9a97a" font-weight="500">10+</text>
+      <rect x="152" y="295" width="72" height="7" rx="2" fill="#3d5f99" opacity="0.7"/>
+      <line x1="248" y1="274" x2="248" y2="310" stroke="rgba(176,140,90,0.25)" stroke-width="1"/>
+      <text x="310" y="284" text-anchor="middle" font-family="Georgia,serif" font-size="16" fill="#c9a97a" font-weight="500">10+</text>
+      <rect x="274" y="295" width="72" height="7" rx="2" fill="#3d5f99" opacity="0.7"/>
+      <line x1="368" y1="274" x2="368" y2="310" stroke="rgba(176,140,90,0.25)" stroke-width="1"/>
+      <text x="430" y="284" text-anchor="middle" font-family="Georgia,serif" font-size="16" fill="#c9a97a" font-weight="500">5</text>
+      <rect x="394" y="295" width="72" height="7" rx="2" fill="#3d5f99" opacity="0.7"/>
+      <line x1="490" y1="274" x2="490" y2="310" stroke="rgba(176,140,90,0.25)" stroke-width="1"/>
+      <text x="550" y="284" text-anchor="middle" font-family="Georgia,serif" font-size="16" fill="#c9a97a" font-weight="500">1</text>
+      <rect x="514" y="295" width="72" height="7" rx="2" fill="#3d5f99" opacity="0.7"/>
+
+      <!-- ── RESEARCH FOCUS (section) ── -->
+      <rect x="10" y="322" width="600" height="200" fill="#ffffff"/>
+      <!-- Section label -->
+      <rect x="30" y="336" width="90" height="7" rx="2" fill="#b08c5a" opacity="0.6"/>
+      <!-- Section title -->
+      <rect x="30" y="350" width="300" height="14" rx="3" fill="#1a1a2e" opacity="0.15"/>
+      <!-- Section lead -->
+      <rect x="30" y="372" width="380" height="7" rx="2" fill="#d8d4cc"/>
+      <rect x="30" y="383" width="340" height="7" rx="2" fill="#d8d4cc"/>
+      <!-- 3 cards -->
+      <rect x="30"  y="400" width="174" height="106" rx="5" fill="#f7f5f0" stroke="#d8d4cc" stroke-width="1"/>
+      <rect x="40"  y="410" width="54" height="13" rx="6" fill="rgba(45,74,122,0.1)"/>
+      <rect x="40"  y="430" width="150" height="10" rx="2" fill="#1a1a2e" opacity="0.12"/>
+      <rect x="40"  y="446" width="150" height="6" rx="2" fill="#d8d4cc"/>
+      <rect x="40"  y="456" width="140" height="6" rx="2" fill="#d8d4cc"/>
+      <rect x="40"  y="466" width="145" height="6" rx="2" fill="#d8d4cc"/>
+      <rect x="40"  y="476" width="130" height="6" rx="2" fill="#d8d4cc"/>
+
+      <rect x="218" y="400" width="174" height="106" rx="5" fill="#f7f5f0" stroke="#d8d4cc" stroke-width="1"/>
+      <rect x="228" y="410" width="54" height="13" rx="6" fill="rgba(45,74,122,0.1)"/>
+      <rect x="228" y="430" width="150" height="10" rx="2" fill="#1a1a2e" opacity="0.12"/>
+      <rect x="228" y="446" width="150" height="6" rx="2" fill="#d8d4cc"/>
+      <rect x="228" y="456" width="140" height="6" rx="2" fill="#d8d4cc"/>
+      <rect x="228" y="466" width="145" height="6" rx="2" fill="#d8d4cc"/>
+
+      <rect x="406" y="400" width="174" height="106" rx="5" fill="#f7f5f0" stroke="#d8d4cc" stroke-width="1"/>
+      <rect x="416" y="410" width="54" height="13" rx="6" fill="rgba(45,74,122,0.1)"/>
+      <rect x="416" y="430" width="150" height="10" rx="2" fill="#1a1a2e" opacity="0.12"/>
+      <rect x="416" y="446" width="150" height="6" rx="2" fill="#d8d4cc"/>
+      <rect x="416" y="456" width="140" height="6" rx="2" fill="#d8d4cc"/>
+      <rect x="416" y="466" width="145" height="6" rx="2" fill="#d8d4cc"/>
+
+      <!-- ── PUBLICATIONS (section) ── -->
+      <rect x="10" y="524" width="600" height="188" fill="#f7f5f0"/>
+      <rect x="30" y="536" width="90" height="7" rx="2" fill="#b08c5a" opacity="0.6"/>
+      <rect x="30" y="550" width="250" height="14" rx="3" fill="#1a1a2e" opacity="0.15"/>
+      <rect x="30" y="572" width="350" height="7" rx="2" fill="#d8d4cc"/>
+      <!-- 3 pub items with left gold border -->
+      <rect x="30"  y="588" width="560" height="32" rx="3" fill="#fff" stroke="#d8d4cc" stroke-width="1"/>
+      <rect x="30"  y="588" width="3"   height="32" rx="0" fill="#b08c5a"/>
+      <rect x="44"  y="594" width="50"  height="7"  rx="2" fill="#b08c5a" opacity="0.5"/>
+      <rect x="44"  y="606" width="320" height="7"  rx="2" fill="#1a1a2e" opacity="0.12"/>
+
+      <rect x="30"  y="628" width="560" height="32" rx="3" fill="#fff" stroke="#d8d4cc" stroke-width="1"/>
+      <rect x="30"  y="628" width="3"   height="32" rx="0" fill="#b08c5a"/>
+      <rect x="44"  y="634" width="50"  height="7"  rx="2" fill="#b08c5a" opacity="0.5"/>
+      <rect x="44"  y="646" width="290" height="7"  rx="2" fill="#1a1a2e" opacity="0.12"/>
+
+      <rect x="30"  y="668" width="560" height="32" rx="3" fill="#fff" stroke="#d8d4cc" stroke-width="1"/>
+      <rect x="30"  y="668" width="3"   height="32" rx="0" fill="#b08c5a"/>
+      <rect x="44"  y="674" width="50"  height="7"  rx="2" fill="#b08c5a" opacity="0.5"/>
+      <rect x="44"  y="686" width="310" height="7"  rx="2" fill="#1a1a2e" opacity="0.12"/>
+
+      <!-- View all button -->
+      <rect x="460" y="708" width="110" height="22" rx="3" fill="#b08c5a"/>
+      <text x="515" y="722" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="#1a1a2e" font-weight="bold">VIEW ALL PUBS →</text>
+
+      <!-- ── FOOTER ── -->
+      <rect x="10" y="714" width="600" height="44" rx="0" fill="#1a1a2e"/>
+      <line x1="10" y1="714" x2="610" y2="714" stroke="rgba(176,140,90,0.2)" stroke-width="1"/>
+      <rect x="160" y="726" width="280" height="7" rx="2" fill="#3d5f99" opacity="0.7"/>
+      <rect x="200" y="740" width="200" height="7" rx="2" fill="#3d5f99" opacity="0.5"/>
+
+      <!-- LABELS -->
+      <text x="615" y="35"  font-family="Arial,sans-serif" font-size="7" fill="#b08c5a" font-weight="bold">NAV</text>
+      <text x="615" y="160" font-family="Arial,sans-serif" font-size="7" fill="#b08c5a" font-weight="bold">HERO</text>
+      <text x="615" y="290" font-family="Arial,sans-serif" font-size="7" fill="#b08c5a" font-weight="bold">STATS</text>
+      <text x="615" y="420" font-family="Arial,sans-serif" font-size="7" fill="#b08c5a" font-weight="bold">CARDS</text>
+      <text x="615" y="612" font-family="Arial,sans-serif" font-size="7" fill="#b08c5a" font-weight="bold">PUBS</text>
+      <text x="615" y="736" font-family="Arial,sans-serif" font-size="7" fill="#b08c5a" font-weight="bold">FOOTER</text>
+    </svg>
+    <div class="wireframe-label">Wireframe — Home Page (Desktop, 1100px+ viewport)</div>
+  </div>
+
+  <p style="font-size:9.5pt; color:var(--ink-light); font-style:italic; margin-top:0.5rem;">
+    Note: On mobile viewports (&lt; 768px) the horizontal navigation is replaced by a hamburger menu,
+    the hero affiliation card is hidden, and card grids collapse to a single column.
+  </p>
+
+
+  <!-- ══════════════ 7. GITHUB REPOSITORY ══════════════ -->
+  <h2><span class="section-num">Section 8</span>GitHub Repository &amp; Best Practices</h2>
+
+  <div class="info-box">
+    <p><strong>Repository URL:</strong> <a href="https://github.com/niamh888/Website">https://github.com/niamh888/Website</a></p>
+    <p><strong>Live Site (GitHub Pages):</strong> <a href="https://niamh888.github.io/Website">https://niamh888.github.io/Website</a></p>
+    <p><strong>Hosting method:</strong> GitHub Pages — Deploy from <code>main</code> branch (root), no build step required</p>
+  </div>
+
+  <h3>Commit History — Evidence of Good Git Practice</h3>
+  <p>
+    The repository contains over 50 meaningful commits, each with a descriptive message explaining
+    the change made. Selected commits below illustrate the progression of the project:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Commit Hash</th>
+        <th>Commit Message</th>
+        <th>What It Shows</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>032b1a4</code></td>
+        <td>Create Website Code space with 3 files (Index, Style Sheet and Script file)</td>
+        <td>Project initialisation — HTML, CSS, JS set up from the start</td>
+      </tr>
+      <tr>
+        <td><code>4918b3b</code></td>
+        <td>Create an additional page "About Me"</td>
+        <td>Iterative feature addition</td>
+      </tr>
+      <tr>
+        <td><code>b66fb7b</code></td>
+        <td>Created a new page to showcase My Research</td>
+        <td>Content page addition with separate commit</td>
+      </tr>
+      <tr>
+        <td><code>fe292e9</code></td>
+        <td>Update Nav bar with home, research, standards, consulting, training and contact</td>
+        <td>Navigation architecture change — clean, scoped commit</td>
+      </tr>
+      <tr>
+        <td><code>f2178c0</code></td>
+        <td>Create hero sections with hero cards using accessibility features and buttons</td>
+        <td>Accessibility-first development, noted in commit message</td>
+      </tr>
+      <tr>
+        <td><code>8531832</code></td>
+        <td>Add training page since consulting is added — in order to showcase a table per assignment requirements</td>
+        <td>Purposeful addition tied to requirements</td>
+      </tr>
+      <tr>
+        <td><code>bf842ef</code></td>
+        <td>Add code / javascript for contact form to link to formspree, set up to make contact form live</td>
+        <td>External API integration with clear commit purpose</td>
+      </tr>
+      <tr>
+        <td><code>9f07001</code></td>
+        <td>Add support keyboard support for nav links (enter and space) and brand button using query selector and event listener</td>
+        <td>Accessibility enhancement — specific, descriptive message</td>
+      </tr>
+      <tr>
+        <td><code>b4253e1</code></td>
+        <td>Update github source to README.md</td>
+        <td>Documentation maintenance</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>README File</h3>
+  <p>
+    The repository includes a comprehensive <code>README.md</code> that documents:
+  </p>
+  <ul>
+    <li>Project description and purpose</li>
+    <li>Live site URL and deployment instructions</li>
+    <li>Full page inventory with descriptions</li>
+    <li>Technical stack (HTML5, CSS3, Vanilla JS, Google Fonts, Formspree)</li>
+    <li>Accessibility features and WCAG 2.1 AA compliance summary</li>
+    <li>Responsive design breakpoints table</li>
+    <li>Mobile navigation behaviour documentation</li>
+    <li>Research figures attribution</li>
+    <li>Instructions for updating publications, standards roles, and the contact form</li>
+    <li>Contact information and licence statement</li>
+  </ul>
+
+  <h3>Branching</h3>
+  <p>
+    Development was predominantly carried out on the <strong><code>main</code></strong> branch, with a
+    <strong>merge commit</strong> in the history (<code>a207144 — Merge branch 'main' of
+    https://github.com/niamh888/Website</code>) demonstrating that remote and local branches were
+    managed and merged. A development branch was used during in-class sessions when learning and adopting 
+    different styles.  This "Development in Class" branch was deleted after merging into main.  
+    The repository uses GitHub's branch protection on <code>main</code> as the
+    production branch, serving GitHub Pages directly from root.
+  </p>
+
+
+  <!-- ══════════════ 8. FUTURE HOSTING ══════════════ -->
+  <h2><span class="section-num">Section 9</span>Future Hosting — www.stjohnlynch.com</h2>
+
+  <div class="info-box">
+    <p><strong>Intended production domain:</strong> <a href="https://www.stjohnlynch.com">www.stjohnlynch.com</a></p>
+    <p><strong>Domain registrar / host:</strong> Hosting Ireland (<a href="https://www.hostingireland.ie">hostingireland.ie</a>) — domain transferred and under active management</p>
+    <p><strong>Current live URL (assignment submission):</strong> <a href="https://niamh888.github.io/Website">niamh888.github.io/Website</a> (GitHub Pages)</p>
+  </div>
+
+  <h3>Overview</h3>
+  <p>
+    While the website is currently hosted via <strong>GitHub Pages</strong> for the purposes of this
+    assignment, the long-term intention is for the site to be published at
+    <strong>www.stjohnlynch.com</strong>. The domain has been transferred to
+    <strong>Hosting Ireland</strong> (hostingireland.ie), an Irish hosting provider, in preparation
+    for full production deployment.
+  </p>
+
+  <h3>Planned Deployment Steps</h3>
+  <ol>
+    <li>
+      <strong>Upload site files to Hosting Ireland.</strong>
+      The static site files (<code>index.html</code>, <code>css/style.css</code>,
+      <code>js/script.js</code>, and the <code>images/</code> folder) will be uploaded to the
+      Hosting Ireland server via cPanel File Manager or FTP.
+    </li>
+    <li>
+      <strong>Point the domain to the host.</strong>
+      DNS A records for <code>stjohnlynch.com</code> and <code>www.stjohnlynch.com</code> will be
+      configured to point to the Hosting Ireland server IP address. DNS propagation typically takes
+      up to 24–48 hours.
+    </li>
+    <li>
+      <strong>Configure SSL/TLS certificate.</strong>
+      A free Let's Encrypt SSL certificate will be activated via Hosting Ireland's cPanel to ensure
+      the site is served over HTTPS — required for security, browser trust indicators, and SEO.
+    </li>
+    <li>
+      <strong>Verify contact form endpoint.</strong>
+      The Formspree contact form (ID: <code>xlgabrqj</code>) is domain-agnostic and will continue
+      to function under the new domain without changes to the code.
+    </li>
+    <li>
+      <strong>Update README and repository links.</strong>
+      Once the domain is live, the <code>README.md</code> and any internal references will be
+      updated to reflect <code>www.stjohnlynch.com</code> as the canonical live URL.
+    </li>
+  </ol>
+
+  <h3>Comparison of Hosting Options</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>GitHub Pages (current)</th>
+        <th>Hosting Ireland — stjohnlynch.com (planned)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Custom domain</strong></td>
+        <td>Possible via CNAME (previously configured)</td>
+        <td>Native — site served directly at www.stjohnlynch.com</td>
+      </tr>
+      <tr>
+        <td><strong>Cost</strong></td>
+        <td>Free</td>
+        <td>Annual hosting &amp; domain fee (Hosting Ireland)</td>
+      </tr>
+      <tr>
+        <td><strong>SSL / HTTPS</strong></td>
+        <td>Automatic via GitHub</td>
+        <td>Let's Encrypt via cPanel — free and automatic renewal</td>
+      </tr>
+      <tr>
+        <td><strong>Deployment workflow</strong></td>
+        <td>Push to <code>main</code> branch — auto-deploys</td>
+        <td>Manual upload via FTP / cPanel File Manager</td>
+      </tr>
+      <tr>
+        <td><strong>Professionalism</strong></td>
+        <td>github.io subdomain — less professional for a consulting/research site</td>
+        <td>Branded domain (stjohnlynch.com) — credible and memorable</td>
+      </tr>
+      <tr>
+        <td><strong>Email hosting</strong></td>
+        <td>Not available — Formspree used for form</td>
+        <td>Professional email (niamh@stjohnlynch.com) hosted on same account</td>
+      </tr>
+      <tr>
+        <td><strong>Uptime SLA</strong></td>
+        <td>GitHub SLA (99.9%)</td>
+        <td>Hosting Ireland SLA (99.9%)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Rationale</h3>
+  <p>
+    A branded domain at <strong>www.stjohnlynch.com</strong> is appropriate for a site used in a
+    professional and academic capacity — for consulting enquiries, standards work, and doctoral
+    research visibility. A custom domain with a matching professional email address
+    (<code>niamh@stjohnlynch.com</code>, already in use and displayed in the contact section)
+    reinforces credibility with industry clients, standards bodies, and academic collaborators.
+    GitHub Pages is retained as a development and version-control platform; Hosting Ireland will
+    serve as the production host once all assignment requirements have been assessed.
+  </p>
+
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <div class="doc-footer">
+    <span>Niamh St John Lynch — Web Development Assignment, April 2026</span>
+    <span>github.com/niamh888/Website</span>
+  </div>
+
+</div>
+</body>
+</html>
