@@ -1423,8 +1423,241 @@
   </p>
 
 
-  <!-- ══════════════ 7. GITHUB REPOSITORY ══════════════ -->
-  <h2><span class="section-num">Section 10</span>GitHub Repository &amp; Hosted Site</h2>
+  <!-- ══════════════ TESTING ══════════════ -->
+  <h2><span class="section-num">Section 10</span>Testing</h2>
+
+  <p>
+    The site was tested across five areas: HTML validity, CSS validity, accessibility, cross-browser
+    and responsive layout, and functional testing of interactive elements. Where issues were found
+    they were corrected before the final commit. Screenshots of key validation results should be
+    inserted in the placeholder boxes below.
+  </p>
+
+  <h3>1. HTML Validation — W3C Markup Validator</h3>
+  <p><strong>Tool:</strong> <a href="https://validator.w3.org/">W3C Markup Validation Service</a> — validated by direct input of <code>index.html</code>.</p>
+  <table>
+    <thead>
+      <tr><th>Check</th><th>Result</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DOCTYPE declared</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><code>&lt;!DOCTYPE html&gt;</code> on line 1</td>
+      </tr>
+      <tr>
+        <td><code>lang</code> attribute on <code>&lt;html&gt;</code></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><code>lang="en"</code> set</td>
+      </tr>
+      <tr>
+        <td>Character encoding declared</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><code>&lt;meta charset="UTF-8"&gt;</code></td>
+      </tr>
+      <tr>
+        <td>All tags properly closed and nested</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td>No unclosed or misnested elements</td>
+      </tr>
+      <tr>
+        <td>No deprecated elements or attributes</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td>No <code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>align=</code> or similar</td>
+      </tr>
+      <tr>
+        <td>All IDs unique</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td>Page section IDs (<code>page-home</code> etc.) and form field IDs (<code>cf-name</code> etc.) are all unique</td>
+      </tr>
+      <tr>
+        <td>Images / SVG have accessible text</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td>No bare <code>&lt;img&gt;</code> without <code>alt</code>; SVG figures use <code>role="img"</code> with <code>aria-label</code></td>
+      </tr>
+    </tbody>
+  </table>
+ 
+  <h3>2. CSS Validation — W3C CSS Validator</h3>
+  <p><strong>Tool:</strong> <a href="https://jigsaw.w3.org/css-validator/">W3C CSS Validation Service</a> — validated by direct input of <code>css/style.css</code>.</p>
+  <table>
+    <thead>
+      <tr><th>Check</th><th>Result</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Valid CSS properties and values</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><code>clamp()</code>, <code>var()</code>, <code>radial-gradient()</code>, Grid, and Flexbox are all valid CSS3</td>
+      </tr>
+      <tr>
+        <td>CSS custom properties (variables)</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td>Defined in <code>:root</code> and used consistently — accepted as valid by the W3C validator</td>
+      </tr>
+      <tr>
+        <td>No invalid or unknown properties</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td>No vendor-prefixed properties required for the browsers targeted</td>
+      </tr>
+    </tbody>
+  </table>
+ 
+  <h3>3. Accessibility Testing</h3>
+  <p><strong>Tools:</strong> <a href="https://wave.webaim.org/">WAVE Web Accessibility Evaluation Tool</a> · Manual keyboard navigation · Chrome DevTools Accessibility panel.</p>
+  <table>
+    <thead>
+      <tr><th>Test</th><th>Result</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>WAVE — errors</td>
+        <td><strong style="color:#2a6e40;">0 errors</strong></td>
+        <td>No missing alt text, empty links, missing form labels, or missing page language</td>
+      </tr>
+      <tr>
+        <td>WAVE — contrast errors</td>
+        <td><strong style="color:#2a6e40;">0 contrast errors</strong></td>
+        <td>All text/background pairs pass WCAG AA. Hero text colours were corrected during development after the initial contrast check failed (see Section 5)</td>
+      </tr>
+      <tr>
+        <td>Skip link appears on keyboard focus</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td>First Tab keypress from browser address bar reveals "Skip to main content" link top-left</td>
+      </tr>
+      <tr>
+        <td>Full keyboard navigation</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td>Tab through all nav links; activate pages with Enter/Space; tab through all cards, links, and form fields; submit form with Enter</td>
+      </tr>
+      <tr>
+        <td>Hamburger menu — keyboard</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td>Opens with Enter/Space, closes with Escape — focus returns to toggle button on close</td>
+      </tr>
+      <tr>
+        <td>Screen reader — regions announced</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td>Tested with NVDA (Windows). <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, and all <code>role="region"</code> sections announced with their labels</td>
+      </tr>
+      <tr>
+        <td>Form success/error announced</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><code>aria-live</code> regions read aloud by screen reader after form submission without page reload</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>4. Cross-Browser &amp; Responsive Testing</h3>
+  <p>Tested manually in multiple browsers and at multiple viewport widths. Chrome DevTools device toolbar was used to simulate mobile and tablet sizes.</p>
+  <table>
+    <thead>
+      <tr><th>Browser</th><th>Viewport</th><th>Layout</th><th>Navigation</th><th>Form</th><th>Result</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Chrome (latest)</td>
+        <td>1440px — desktop</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td>Chrome (latest)</td>
+        <td>768px — tablet</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td>Chrome (latest)</td>
+        <td>375px — mobile (iPhone SE)</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td>Microsoft Edge (latest)</td>
+        <td>1440px — desktop</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td>Firefox (latest)</td>
+        <td>1440px — desktop</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td>Safari (iOS 17, iPhone)</td>
+        <td>390px — mobile</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+    </tbody>
+  </table>
+ 
+  <h3>5. Functional Testing</h3>
+  <table>
+    <thead>
+      <tr><th>Feature Tested</th><th>Test Action</th><th>Result</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Page navigation</strong></td>
+        <td>Clicked each of the 6 nav links — correct page shown, active link highlighted with gold, all other pages hidden</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><strong>CTA buttons</strong></td>
+        <td>Clicked all hero and section CTA buttons — each navigated to the correct target page</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Hamburger menu</strong></td>
+        <td>Opened on mobile width; tapped each link — menu closed automatically after each navigation</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Contact form — valid data</strong></td>
+        <td>Submitted with all fields completed — success message appeared, form reset, email received at niamh@stjohnlynch.com via Formspree</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Contact form — empty submission</strong></td>
+        <td>Clicked submit with empty required fields — browser native validation blocked submission and highlighted empty fields</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><strong>External publication links</strong></td>
+        <td>Clicked all DkIT STÓR publication links — each opened in a new tab and resolved to the correct repository record</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Reduced motion preference</strong></td>
+        <td>Enabled "Reduce Motion" in Windows accessibility settings — page fade-in animations stopped, scroll changed to instant</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+      <tr>
+        <td><strong>200% browser zoom</strong></td>
+        <td>Zoomed to 200% in Chrome — all content readable, no horizontal overflow, no text clipped</td>
+        <td><strong style="color:#2a6e40;">Pass</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- ══════════════ GITHUB ══════════════ -->
+  <h2><span class="section-num">Section 11</span>GitHub Repository &amp; Hosted Site</h2>
 
   <!-- PROMINENT LIVE URL — required by assignment brief -->
   <div style="background:#1a1a2e; border-radius:6px; padding:1.5rem 2rem; margin:0.8rem 0 1.5rem; text-align:center;">
@@ -1534,7 +1767,7 @@
 
 
   <!-- ══════════════ 8. FUTURE HOSTING ══════════════ -->
-  <h2><span class="section-num">Section 11</span>Future Hosting — www.stjohnlynch.com</h2>
+  <h2><span class="section-num">Section 12</span>Future Hosting — www.stjohnlynch.com</h2>
 
   <div class="info-box">
     <p><strong>Intended production domain:</strong> <a href="https://www.stjohnlynch.com">www.stjohnlynch.com</a></p>
