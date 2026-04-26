@@ -298,6 +298,20 @@
     </p>
   </div>
 
+  <h3>Target Audience</h3>
+  <p>The site serves three overlapping professional audiences:</p>
+  <ul>
+    <li><strong>Academic collaborators and research supervisors</strong> — seeking a clear record of doctoral research activity, publications, and conference output. They need fast access to the full publication list and institutional affiliations.</li>
+    <li><strong>Industry clients and regulatory professionals</strong> — medical device manufacturers, regulatory affairs teams, and quality managers seeking specialist consulting or training on EU MDR, the EU AI Act, and related standards. They need to understand the site owner's credentials and services quickly, and have a straightforward route to make an enquiry.</li>
+    <li><strong>Standards bodies and national delegations</strong> — IEC, CEN-CENELEC, and NSAI peers seeking professional context on the site owner's standardisation roles and expert committee contributions. They need the Standards page to be authoritative and detailed.</li>
+  </ul>
+  <p>
+    The design — restrained colour palette, serif academic typography, concise professional copy — is
+    calibrated for this audience: senior professionals in regulated industries who value credibility and
+    substance over visual novelty. The site must work equally on a mobile device (checked at a conference)
+    and on a desktop (used during a formal review).
+  </p>
+
 
   <!-- ══════════════ 2. PAGES ══════════════ -->
   <h2><span class="section-num">Section 2</span>Pages — Working Titles &amp; Information Needed</h2>
@@ -380,6 +394,11 @@
   <ul>
     <li><strong>Formspree</strong> (<a href="https://formspree.io">formspree.io</a>) — contact form submission handler (form ID: <code>xlgabrqj</code>); no server-side code required</li>
     <li><strong>GitHub &amp; GitHub Pages</strong> — version control and free static hosting</li>
+  </ul>
+
+  <h3>Audio &amp; Video</h3>
+  <ul>
+    <li>No audio or video content is used on this site. The site is text, image, and SVG-based only. This decision was deliberate — the target audience (regulatory professionals, academics, standards experts) accesses the site in formal or semi-formal settings where auto-playing media would be inappropriate.</li>
   </ul>
 
   <h3>Code References &amp; Standards</h3>
@@ -786,6 +805,63 @@
     <li><strong>Progressive enhancement</strong> — the page is readable without JavaScript; JS only adds navigation switching behaviour on top of semantic HTML</li>
   </ul>
 
+  <h3>Terry Morris Web Design Best Practices — How They Were Applied</h3>
+  <p>
+    The site was designed and built with reference to the recommended web design practices at
+    <a href="https://terrymorris.net/bestpractices/">terrymorris.net/bestpractices</a>.
+    The table below maps the key recommendations to specific implementation decisions made in this project.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Best Practice</th>
+        <th>How It Was Applied in This Project</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Know your audience</strong></td>
+        <td>Design, copy tone, and content depth are calibrated for regulatory professionals, academics, and standards experts — not general consumers. No jargon is avoided; instead, specialist terminology is used accurately because the audience expects it.</td>
+      </tr>
+      <tr>
+        <td><strong>Provide good navigation</strong></td>
+        <td>A sticky navigation bar is present on all pages with clearly labelled links. The active page is highlighted with <code>aria-current="page"</code> and a gold background. A skip link allows keyboard users to bypass navigation. On mobile, a hamburger menu provides full navigation access.</td>
+      </tr>
+      <tr>
+        <td><strong>Use white space effectively</strong></td>
+        <td>Generous padding on all sections (<code>5rem 2rem</code>), cards, and publication items prevents the page feeling cluttered despite the volume of information. The alternating cream/white section backgrounds create visual rhythm without requiring decorative elements.</td>
+      </tr>
+      <tr>
+        <td><strong>Limit the number of fonts</strong></td>
+        <td>Exactly two fonts are used throughout — Cormorant Garamond (headings) and DM Sans (body). No other font families are introduced. Hierarchy is achieved through size, weight, and letter-spacing within these two families.</td>
+      </tr>
+      <tr>
+        <td><strong>Use colour consistently</strong></td>
+        <td>Ten colours are defined as CSS custom properties in <code>:root</code> and used consistently across all six pages. The same gold accent, navy background, and blue interactive colour appear in the same roles everywhere on the site.</td>
+      </tr>
+      <tr>
+        <td><strong>Design for scannability</strong></td>
+        <td>Card grids, publication lists with gold left borders, section labels in small caps, and bold eyebrow text allow visitors to scan the page and extract key information without reading every word. Statistics are displayed in a prominent strip with large numerals.</td>
+      </tr>
+      <tr>
+        <td><strong>Ensure fast loading</strong></td>
+        <td>No frameworks, no large JavaScript bundles, no hero images. The only external requests are two Google Font families (loaded asynchronously) and the Formspree API (only called on form submit). All diagrams are inline SVG — zero extra HTTP requests.</td>
+      </tr>
+      <tr>
+        <td><strong>Design for accessibility</strong></td>
+        <td>WCAG 2.1 Level AA is the design target. Skip links, semantic HTML, ARIA labels, keyboard navigation, colour contrast verification, and reduced motion support are all implemented. See Section 5 for the full accessibility feature list.</td>
+      </tr>
+      <tr>
+        <td><strong>Design for multiple browsers and devices</strong></td>
+        <td>The site uses standard HTML5, CSS3, and vanilla JavaScript with no proprietary APIs. CSS Grid and Flexbox are supported by all modern browsers. The mobile-first responsive layout is tested at 375px (iPhone SE), 768px (tablet), and 1440px (desktop).</td>
+      </tr>
+      <tr>
+        <td><strong>Provide clear calls to action</strong></td>
+        <td>Each page section ends with prominent CTA buttons (gold filled for primary, outlined for secondary). The hero on every main page includes a direct route to the Contact page. The contact form is always reachable within two clicks from any page.</td>
+      </tr>
+    </tbody>
+  </table>
+
   <h3>How Artificial Intelligence Supported Coding Productivity</h3>
   <p>
     <strong>Claude Code</strong> (Anthropic's AI coding assistant, running as a CLI and VS Code extension)
@@ -1178,10 +1254,17 @@
   <h2><span class="section-num">Section 9</span>Wireframe — Home Page</h2>
 
   <p>
-    The wireframe below represents the <strong>Home page</strong> layout, showing the logo/navigation,
-    hero content, stats strip, card grid section, and footer areas. The design is responsive — on mobile
-    the two-column hero collapses to one column and the horizontal nav is replaced by a hamburger menu.
+    The wireframe below represents the <strong>Home page</strong> layout at desktop width (≥ 1100px),
+    clearly showing the logo/navigation, hero content area, statistics strip, card grid content section,
+    featured publications, and footer. Mobile layout differences are described in Section 7 (Responsive Design).
   </p>
+
+  <div class="screenshot-placeholder" style="margin-bottom:0.5rem;">
+    <strong>Action required:</strong> To include this wireframe in a Word document, right-click the wireframe
+    below in your browser → <em>Save image as…</em> or use the Snipping Tool (Win+Shift+S) to capture it
+    as a <strong>.png</strong> file, then insert it into your Word document. The brief requires the wireframe
+    to be saved as .png or .jpg.
+  </div>
 
   <div class="wireframe-container">
     <svg viewBox="0 0 620 760" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px;height:auto;display:block;margin:0 auto;" aria-label="Wireframe for the Home page showing navigation bar at top, hero section with headline and affiliations card, statistics strip, research focus card grid, featured publications list, and footer">
@@ -1341,7 +1424,16 @@
 
 
   <!-- ══════════════ 7. GITHUB REPOSITORY ══════════════ -->
-  <h2><span class="section-num">Section 10</span>GitHub Repository &amp; Best Practices</h2>
+  <h2><span class="section-num">Section 10</span>GitHub Repository &amp; Hosted Site</h2>
+
+  <!-- PROMINENT LIVE URL — required by assignment brief -->
+  <div style="background:#1a1a2e; border-radius:6px; padding:1.5rem 2rem; margin:0.8rem 0 1.5rem; text-align:center;">
+    <div style="font-family:Arial,sans-serif; font-size:8.5pt; letter-spacing:0.15em; text-transform:uppercase; color:#b08c5a; margin-bottom:0.6rem;">Live Hosted Site — GitHub Pages</div>
+    <a href="https://niamh888.github.io/Website" style="font-family:Georgia,serif; font-size:16pt; color:#c9a97a; text-decoration:none; font-weight:500; letter-spacing:0.02em;">
+      niamh888.github.io/Website
+    </a>
+    <div style="font-family:Arial,sans-serif; font-size:8.5pt; color:#8899bb; margin-top:0.5rem;">Deployed from the <code style="color:#9aaac8;">main</code> branch · No build step required · HTTPS via GitHub</div>
+  </div>
 
   <div class="info-box">
     <p><strong>Repository URL:</strong> <a href="https://github.com/niamh888/Website">https://github.com/niamh888/Website</a></p>
