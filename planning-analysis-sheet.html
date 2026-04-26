@@ -690,8 +690,186 @@
   </div>
 
 
-  <!-- ══════════════ 5. SITE MAP ══════════════ -->
-  <h2><span class="section-num">Section 6</span>Site Map / Storyboard Flowchart</h2>
+  <!-- ══════════════ 6. RESPONSIVE DESIGN ══════════════ -->
+  <h2><span class="section-num">Section 6</span>Responsive Design</h2>
+
+  <p>
+    The site is built <strong>mobile-first</strong> — base styles target small screens and
+    <code>@media</code> breakpoints progressively enhance the layout for larger viewports. No CSS
+    framework (Bootstrap, Tailwind, etc.) is used; all responsive behaviour is achieved with native
+    CSS Grid, Flexbox, and two media query breakpoints.
+  </p>
+
+  <div class="info-box">
+    <p><strong>Approach:</strong> Mobile-first — base styles for small screens, enhanced at breakpoints</p>
+    <p><strong>Techniques:</strong> CSS Grid <code>auto-fit / minmax()</code>, Flexbox <code>flex-wrap</code>, <code>clamp()</code> fluid typography, <code>@media</code> breakpoints</p>
+    <p><strong>Breakpoints:</strong> 768px (tablet threshold) · 1100px (desktop / max-width container)</p>
+    <p><strong>Framework used:</strong> None — all layout is handwritten CSS</p>
+  </div>
+
+  <h3>Breakpoints &amp; Layout Changes</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Viewport</th>
+        <th>Breakpoint</th>
+        <th>Layout Behaviour</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Mobile</strong></td>
+        <td>&lt; 768px</td>
+        <td>
+          Single column throughout. Hero collapses to one column; affiliations card is hidden
+          (<code>display: none</code>). Horizontal navigation links are hidden; hamburger menu
+          button appears. Card grids wrap to one column. Contact grid stacks vertically.
+          Standards items stack (badge above text). Stats strip items wrap to two per row with
+          dividers hidden.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Tablet</strong></td>
+        <td>≥ 768px</td>
+        <td>
+          Two-column card grids active (<code>minmax(300px, 1fr)</code>). Hero two-column layout
+          restores. Contact side-by-side layout active. Standards badge and text return to
+          horizontal grid. Hamburger menu hidden; horizontal nav links shown. Affiliations card visible.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Desktop</strong></td>
+        <td>≥ 1100px (max-width)</td>
+        <td>
+          Three-column card grids active (<code>minmax(280px, 1fr)</code>). All content containers
+          capped at <code>max-width: 1100px</code> and centred with <code>margin: 0 auto</code>.
+          Hero grid uses fixed <code>grid-template-columns: 1fr 320px</code>. No further breakpoint
+          beyond this — layout scales within the container.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Component-Level Responsive Behaviour</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Component</th>
+        <th>Mobile (&lt; 768px)</th>
+        <th>Tablet / Desktop (≥ 768px)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Navigation</strong></td>
+        <td>Hamburger button (☰) replaces nav links. Tapping opens a full-width dropdown. Menu closes on link tap, outside click, or Escape key.</td>
+        <td>Horizontal nav links visible in a flex row. Hamburger button hidden (<code>display: none</code>).</td>
+      </tr>
+      <tr>
+        <td><strong>Hero section</strong></td>
+        <td>Single column. Headline and body text stack above CTAs. Affiliations card hidden to reduce scroll depth on small screens.</td>
+        <td>Two-column grid: text content left, affiliations card right (<code>1fr 320px</code>).</td>
+      </tr>
+      <tr>
+        <td><strong>Stats strip</strong></td>
+        <td>Items wrap to two per row. Vertical dividers hidden (<code>display: none</code>). Reduced padding per item.</td>
+        <td>All 5 stats in a single horizontal row with gold dividers between each.</td>
+      </tr>
+      <tr>
+        <td><strong>Card grids</strong></td>
+        <td>Single column — each card takes full width.</td>
+        <td>2-column grid on tablet (<code>minmax(300px, 1fr)</code>); 3-column on desktop (<code>minmax(280px, 1fr)</code>) via <code>auto-fit</code>.</td>
+      </tr>
+      <tr>
+        <td><strong>Standards items</strong></td>
+        <td>Badge stacks above text content (<code>grid-template-columns: 1fr</code>).</td>
+        <td>Badge and text side by side (<code>grid-template-columns: auto 1fr</code>).</td>
+      </tr>
+      <tr>
+        <td><strong>Contact layout</strong></td>
+        <td>Info column and form stack vertically with 2.5rem gap.</td>
+        <td>Side-by-side two-column grid (<code>1fr 1fr</code>) with 4rem gap.</td>
+      </tr>
+      <tr>
+        <td><strong>Training table</strong></td>
+        <td>Horizontally scrollable — wraps in <code>overflow-x: auto</code> container with <code>role="region"</code> and <code>tabindex="0"</code> for keyboard scrollability.</td>
+        <td>Table displays at full width without scrolling.</td>
+      </tr>
+      <tr>
+        <td><strong>Typography</strong></td>
+        <td><code>clamp()</code> on headings scales font size fluidly: e.g. <code>clamp(2.8rem, 5vw, 4.2rem)</code> for the hero H1 and <code>clamp(1.8rem, 3vw, 2.6rem)</code> for section titles.</td>
+        <td>Same <code>clamp()</code> values scale up smoothly — no abrupt size jump at breakpoints.</td>
+      </tr>
+      <tr>
+        <td><strong>SVG research figure</strong></td>
+        <td>SVG uses <code>width: 100%; height: auto</code> — scales proportionally to container width.</td>
+        <td>Capped at <code>max-width: 100%</code> within the section container.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Mobile Navigation — Detail</h3>
+  <p>On viewports below 768px the horizontal nav links are hidden with CSS and a hamburger icon button is shown. The full behaviour:</p>
+  <ul>
+    <li>Tapping the ☰ button adds the <code>.open</code> class to the <code>#nav-links</code> list, which switches it from <code>display: none</code> to <code>display: flex; flex-direction: column</code> — a full-width dropdown below the nav bar</li>
+    <li>Each nav link takes 100% width with left padding and a transparent left border that turns gold when active</li>
+    <li>The menu closes automatically when a nav link is tapped (via the <code>showPage()</code> function calling <code>closeMenu()</code>), when the user clicks anywhere outside the nav, or when the <code>Escape</code> key is pressed</li>
+    <li><code>aria-expanded</code> on the toggle button is updated in real time so screen readers always know whether the menu is open or closed</li>
+  </ul>
+
+  <h3>CSS Techniques — Summary</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Technique</th>
+        <th>Where Used</th>
+        <th>Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>CSS Grid auto-fit / minmax()</code></td>
+        <td>All card grids (<code>.card-grid-2</code>, <code>.card-grid-3</code>)</td>
+        <td>Cards automatically reflow from 3 → 2 → 1 column as the viewport narrows, with no explicit breakpoint needed per grid</td>
+      </tr>
+      <tr>
+        <td><code>CSS Grid fixed columns</code></td>
+        <td>Hero (<code>1fr 320px</code>), contact (<code>1fr 1fr</code>), standards items (<code>auto 1fr</code>)</td>
+        <td>Fixed two-column layouts that collapse to single column at the 768px breakpoint</td>
+      </tr>
+      <tr>
+        <td><code>Flexbox + flex-wrap</code></td>
+        <td>Nav links, hero CTAs, stats strip, affiliation badges</td>
+        <td>Items wrap naturally when space is insufficient, without overflow</td>
+      </tr>
+      <tr>
+        <td><code>clamp(min, preferred, max)</code></td>
+        <td>Hero H1, section titles</td>
+        <td>Fluid font sizes that scale smoothly between minimum and maximum values based on viewport width — no font-size breakpoints needed</td>
+      </tr>
+      <tr>
+        <td><code>@media (max-width: 768px)</code></td>
+        <td>Nav toggle, hero grid, contact grid, standards items, stats strip</td>
+        <td>Single breakpoint handles all layout switches from multi-column to single-column</td>
+      </tr>
+      <tr>
+        <td><code>@media (max-width: 600px)</code></td>
+        <td>Stats strip only</td>
+        <td>Additional breakpoint hides stat dividers and reduces stat item padding on very small screens</td>
+      </tr>
+      <tr>
+        <td><code>max-width: 1100px; margin: 0 auto</code></td>
+        <td>All <code>.section-inner</code>, <code>.nav-inner</code>, <code>.hero-inner</code>, <code>.stats-inner</code></td>
+        <td>Constrains content width on large monitors and centres it, preventing overly wide line lengths</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- ══════════════ 7. SITE MAP ══════════════ -->
+  <h2><span class="section-num">Section 7</span>Site Map / Storyboard Flowchart</h2>
 
   <p>
     All six pages are contained in a single <code>index.html</code> file. Navigation is managed by
@@ -814,7 +992,7 @@
 
 
   <!-- ══════════════ 6. WIREFRAME ══════════════ -->
-  <h2><span class="section-num">Section 7</span>Wireframe — Home Page</h2>
+  <h2><span class="section-num">Section 8</span>Wireframe — Home Page</h2>
 
   <p>
     The wireframe below represents the <strong>Home page</strong> layout, showing the logo/navigation,
@@ -980,7 +1158,7 @@
 
 
   <!-- ══════════════ 7. GITHUB REPOSITORY ══════════════ -->
-  <h2><span class="section-num">Section 8</span>GitHub Repository &amp; Best Practices</h2>
+  <h2><span class="section-num">Section 9</span>GitHub Repository &amp; Best Practices</h2>
 
   <div class="info-box">
     <p><strong>Repository URL:</strong> <a href="https://github.com/niamh888/Website">https://github.com/niamh888/Website</a></p>
@@ -1081,7 +1259,7 @@
 
 
   <!-- ══════════════ 8. FUTURE HOSTING ══════════════ -->
-  <h2><span class="section-num">Section 9</span>Future Hosting — www.stjohnlynch.com</h2>
+  <h2><span class="section-num">Section 10</span>Future Hosting — www.stjohnlynch.com</h2>
 
   <div class="info-box">
     <p><strong>Intended production domain:</strong> <a href="https://www.stjohnlynch.com">www.stjohnlynch.com</a></p>
